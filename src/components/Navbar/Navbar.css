@@ -1,0 +1,79 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 70px;
+
+  background: rgba(15, 15, 15, 0.39);
+}
+.navbar.scrolled {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-logo {
+  position: relative;
+}
+
+.navbar-logo h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+}
+
+.journal-text {
+  position: absolute;
+  top: 5px;
+  left: 110px;
+
+  color: #d7c6a4;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.navbar-links li {
+  color: white;
+  font-size: 1.20rem;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar-links li::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 1px;
+
+  background: white;
+
+  transition: 0.3s;
+}
+
+.navbar-links li:hover::after {
+  width: 100%;
+}
+
+.navbar-links li:hover {
+  color: #e7d2b3;
+}

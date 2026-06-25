@@ -1,0 +1,10 @@
+.hero-model {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 45%;
+  height: 100vh;
+
+  z-index: 100;
+}
