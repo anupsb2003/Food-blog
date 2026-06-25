@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import HeroImage from "../../assets/Hero.png";
-import BurgerVideo from "../../assets/Burger.mp4";
 
 import "./Hero.css";
 
