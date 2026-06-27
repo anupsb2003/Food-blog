@@ -109,18 +109,6 @@ function Hero() {
 
       <div className="hero-overlay" />
 
-      {/* <div className="hero-video">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source src={BurgerVideo} type="video/mp4" />
-        </video>
-      </div> */}
-
       <div className="hero-content">
         <span className="hero-tag">
           A FOOD SCIENCE JOURNAL
