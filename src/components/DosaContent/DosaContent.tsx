@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DosaVideo from "../../assets/DosaBackground.mp4";
 import "./DosaContent.css";
-
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 function DosaContent() {
@@ -79,58 +79,65 @@ function DosaContent() {
       tl.to(".dosa-tag", {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
       })
 
         .to(".dosa-title-line1", {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 0.75,
         })
 
         .to(".dosa-title-line2", {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 0.75,
         })
 
         .to(".dosa-description", {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 0.6,
         })
 
         .to(".feature-1", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
         })
 
         .to(".feature-2", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
         })
 
         .to(".feature-3", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
         })
 
         .to(".feature-4", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
         })
 
         .to(".dosa-btn", {
           opacity: 1,
           scale: 1,
-          duration: 1.5,
+          duration: 0.75,
           ease: "back.out(1.7)",
         });
     }, 100);
+  };
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    setTimeout(() => {
+      navigate("/dosa-navigation");
+    }, 1000);
   };
 
   return (
@@ -196,7 +203,7 @@ function DosaContent() {
             </div>
           </div>
 
-          <button className="dosa-btn">
+          <button className="dosa-btn" onClick={handleOnClick}>
             Explore More
           </button>
         </div>

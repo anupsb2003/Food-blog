@@ -161,6 +161,7 @@ function Contact() {
 
             <input
               type="email"
+              placeholder="email"
             />
           </div>
 
@@ -177,18 +178,14 @@ function Contact() {
 
             <textarea rows={6} />
           </div>
-
           <button
             type="submit"
             className="submit-btn"
           >
             Submit
           </button>
-
         </form>
-
       </div>
-
     </section>
   );
 }

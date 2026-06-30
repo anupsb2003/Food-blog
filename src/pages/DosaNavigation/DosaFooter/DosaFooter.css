@@ -1,0 +1,279 @@
+/* dosaFooter.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5ede1;
+  font-family: "Inter", sans-serif;
+}
+
+/* FOOTER */
+
+.dosa-footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #f6efe4 0%,
+    #f4ebde 50%,
+    #f8f2e8 100%
+  );
+  padding: 70px 50px 35px;
+}
+
+/* GLOW EFFECT */
+
+.footer-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(193, 144, 38, 0.12) 0%,
+    transparent 70%
+  );
+  top: -180px;
+  right: -120px;
+  filter: blur(100px);
+  animation: pulseGlow 7s ease infinite;
+}
+
+/* CONTAINER */
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 70px;
+}
+
+/* BRAND */
+
+.footer-brand {
+  max-width: 450px;
+  animation: fadeUp 1s ease;
+}
+
+.footer-brand h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  color: #8d6200;
+  margin-bottom: 25px;
+}
+
+.footer-brand p {
+  color: #5c5248;
+  line-height: 1.9;
+  font-size: 1.15rem;
+}
+
+/* LINKS */
+
+.footer-links {
+  display: flex;
+  gap: 70px;
+  animation: fadeUp 1.2s ease;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  color: #8d6200;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #4d4339;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-column a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  left: 0;
+  bottom: -4px;
+  background: #8d6200;
+  transition: 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #8d6200;
+  transform: translateX(5px);
+}
+
+.footer-column a:hover::after {
+  width: 100%;
+}
+
+/* NEWSLETTER */
+
+.newsletter-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(141, 98, 0, 0.2);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  height: 62px;
+  width: 290px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.newsletter-box:hover {
+  border-color: rgba(141, 98, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 18px;
+  font-size: 1rem;
+  color: #5d5349;
+}
+
+.newsletter-box input::placeholder {
+  color: #b7a890;
+}
+
+.newsletter-box button {
+  width: 65px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: #8d6200;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-box button:hover {
+  background: rgba(141, 98, 0, 0.08);
+}
+
+/* DIVIDER */
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0);
+  margin-bottom: 30px;
+}
+
+/* BOTTOM */
+.footer-bottom-d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom-d p {
+  color: #9b8d7d;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .footer-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .dosa-footer {
+    padding: 60px 25px 30px;
+  }
+
+  .footer-brand h1 {
+    font-size: 2.4rem;
+  }
+
+  .footer-brand p {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .newsletter-box {
+    width: 100%;
+  }
+
+  .footer-bottom-d{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-d p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+}
