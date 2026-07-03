@@ -2,9 +2,6 @@ import "./DosaList.css";
 import { FaPlay } from "react-icons/fa";
 import Dosa from "../../../assets/Dosa.png";
 export default function App() {
-  function handleVideo(){
-    console.log("Video button clicked");
-  }
   return (
    <div className="dosa-hero-section">
   <div className="dosa-bg-overlay"></div>
