@@ -1,6 +1,6 @@
 // DosaFooter.tsx
 
-import "./dosaFooter.css";
+import "./DosaFooter.css";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function DosaFooter() {
