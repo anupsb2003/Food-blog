@@ -1,0 +1,543 @@
+/* =========================================
+GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  font-family: "Times New Roman", serif;
+
+  color: white;
+}
+
+/* =========================================
+SPICES FOOTER
+========================================= */
+
+.spices-footer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 110px 70px 45px;
+
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  color: white;
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  overflow: hidden;
+}
+
+/* Animated Glow Background */
+
+.spices-footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: -220px;
+  left: -220px;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.06),
+    transparent 70%
+  );
+
+  animation: glowMove 10s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+.spices-footer::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -220px;
+  right: -180px;
+
+  width: 460px;
+  height: 460px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.04),
+    transparent 70%
+  );
+
+  animation: glowMove2 12s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+/* =========================================
+TOP
+========================================= */
+
+.spices-footer-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 90px;
+
+  margin-bottom: 100px;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* =========================================
+LEFT
+========================================= */
+
+.spices-footer-brand {
+  width: 32%;
+}
+
+.spices-footer-logo {
+  font-size: 3rem;
+
+  color: white;
+
+  margin-bottom: 30px;
+
+  font-family: "Times New Roman", serif;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  position: relative;
+}
+
+.spices-footer-logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -12px;
+
+  width: 80px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.9),
+    transparent
+  );
+
+  animation: linePulse 3s ease infinite;
+}
+
+.spices-footer-description {
+  font-size: 1.12rem;
+
+  line-height: 2;
+
+  color: rgba(255,255,255,0.7);
+
+  max-width: 360px;
+}
+
+/* =========================================
+ICONS
+========================================= */
+
+.spices-footer-icons {
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 42px;
+}
+
+.spices-footer-icons a {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(14px);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Shine Effect */
+
+.spices-footer-icons a::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 60%;
+  height: 300%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: 0.8s ease;
+}
+
+.spices-footer-icons a:hover::before {
+  left: 150%;
+}
+
+.spices-footer-icons a:hover {
+  transform:
+    translateY(-6px)
+    scale(1.05);
+
+  background: rgba(255,255,255,0.12);
+
+  border-color: rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 14px 35px rgba(255,255,255,0.08);
+}
+
+/* =========================================
+LINKS
+========================================= */
+
+.spices-footer-links {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 55px;
+}
+
+.spices-footer-column h4 {
+  font-size: 1rem;
+
+  color: rgba(255,255,255,0.9);
+
+  margin-bottom: 28px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  position: relative;
+}
+
+.spices-footer-column h4::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -10px;
+
+  width: 45px;
+  height: 1px;
+
+  background: rgba(255,255,255,0.35);
+}
+
+.spices-footer-column a {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: rgba(255,255,255,0.72);
+
+  text-decoration: none;
+
+  font-size: 1.08rem;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.spices-footer-column a:hover {
+  color: white;
+
+  transform: translateX(8px);
+
+  opacity: 0.9;
+}
+
+/* =========================================
+ADDRESS BOX
+========================================= */
+
+.spices-footer-address {
+  margin-top: 30px;
+
+  padding: 24px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* Glow Overlay */
+
+.spices-footer-address::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+.spices-footer-address:hover::before {
+  opacity: 1;
+}
+
+.spices-footer-address:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255,255,255,0.07);
+
+  border-color: rgba(255,255,255,0.14);
+}
+
+.spices-footer-address span {
+  display: block;
+
+  font-size: .82rem;
+
+  color: rgba(255,255,255,0.6);
+
+  margin-bottom: 12px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.spices-footer-address p {
+  color: rgba(255,255,255,0.82);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+}
+
+/* =========================================
+BOTTOM
+========================================= */
+
+.spices-footer-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  padding-top: 34px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  color: rgba(255,255,255,0.45);
+
+  font-size: .9rem;
+
+  letter-spacing: 2px;
+
+  animation: fadeUp 1.5s ease;
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(40px, 30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glowMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, -40px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes linePulse {
+  0% {
+    width: 80px;
+    opacity: 0.7;
+  }
+
+  50% {
+    width: 120px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 80px;
+    opacity: 0.7;
+  }
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .spices-footer-top {
+    flex-direction: column;
+  }
+
+  .spices-footer-brand {
+    width: 100%;
+  }
+
+  .spices-footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .spices-footer {
+    padding: 80px 24px 35px;
+  }
+
+  .spices-footer-links {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .spices-footer-logo {
+    font-size: 2.4rem;
+  }
+
+  .spices-footer-description {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+  .spices-footer-bottom {
+    font-size: .76rem;
+
+    line-height: 1.8;
+  }
+}

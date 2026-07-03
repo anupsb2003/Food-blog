@@ -1,0 +1,455 @@
+/* ================================
+GLOBAL
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.spHero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 6vw;
+
+  background: transparent;
+}
+
+/* Animated overlay */
+
+.spHero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  background-size: 300% 300%;
+
+  animation: gradientMove 12s ease infinite;
+
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
+  }
+}
+
+/* ================================
+CONTENT
+================================ */
+
+.spHero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 580px;
+
+  animation: fadeUp 1.4s ease forwards;
+
+  opacity: 0;
+
+  transform: translateY(80px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation */
+
+.spHero-content {
+  animation:
+    fadeUp 1.3s ease forwards,
+    floatContent 5s ease-in-out infinite 1.4s;
+}
+
+@keyframes floatContent {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ================================
+TAG
+================================ */
+
+.spHero-tag {
+  position: relative;
+
+  display: inline-block;
+
+  color: white;
+
+  font-size: 15px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  font-weight: bold;
+
+  font-family: "Times New Roman", serif;
+
+  margin-bottom: 28px;
+
+  animation: fadeUp 1s ease forwards;
+}
+
+.spHero-tag::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #d49a57;
+
+  animation: lineGrow 1.6s ease forwards;
+}
+
+@keyframes lineGrow {
+  to {
+    width: 100%;
+  }
+}
+
+/* ================================
+TITLE
+================================ */
+
+.spHero-title {
+  font-family: "Times New Roman", serif;
+
+  font-size: clamp(4rem, 7vw, 7rem);
+
+  line-height: 0.95;
+
+  color: #fff;
+
+  margin-bottom: 32px;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45);
+
+  animation:
+    fadeUp 1.4s ease forwards,
+    textGlow 5s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  50% {
+    text-shadow:
+      0 10px 35px rgba(255, 255, 255, 0.25);
+  }
+
+  100% {
+    text-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ================================
+DESCRIPTION
+================================ */
+
+.spHero-description {
+  font-family: "Times New Roman", serif;
+
+  font-size: 1.45rem;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  max-width: 520px;
+
+  margin-bottom: 50px;
+
+  animation: fadeUp 1.8s ease forwards;
+}
+
+/* ================================
+BUTTONS
+================================ */
+
+.spHero-actions {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  animation: fadeUp 2s ease forwards;
+}
+
+/* Primary */
+
+.spHero-primaryBtn {
+  position: relative;
+
+  overflow: hidden;
+
+  border: none;
+
+  background: #8c4300;
+
+  color: white;
+
+  padding: 18px 38px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-family: "Times New Roman", serif;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: .45s;
+}
+
+.spHero-primaryBtn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background: rgba(255,255,255,.35);
+
+  transform: skewX(-25deg);
+
+  transition: .7s;
+}
+
+.spHero-primaryBtn:hover::before{
+    left:140%;
+}
+
+.spHero-primaryBtn:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(140,67,0,.45);
+
+    background:#a74e00;
+}
+
+/* Secondary */
+
+.spHero-secondaryBtn{
+
+    background:transparent;
+
+    border:none;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-family:"Times New Roman", serif;
+
+    transition:.4s;
+}
+
+.spHero-secondaryBtn:hover{
+
+    gap:20px;
+
+    color:#ffb36a;
+}
+
+/* ================================
+SCROLL
+================================ */
+
+.spHero-scroll{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    z-index:10;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    font-family:"Times New Roman", serif;
+
+    animation:scrollFade 2s infinite;
+}
+
+@keyframes scrollFade{
+
+    0%,100%{
+
+        opacity:.4;
+    }
+
+    50%{
+
+        opacity:1;
+    }
+
+}
+
+.spHero-scrollLine{
+
+    width:2px;
+
+    height:35px;
+
+    background:white;
+
+    animation:scrollLine 1.8s infinite;
+}
+
+@keyframes scrollLine{
+
+    0%{
+
+        transform:scaleY(0);
+
+        transform-origin:top;
+    }
+
+    50%{
+
+        transform:scaleY(1);
+
+        transform-origin:top;
+    }
+
+    51%{
+
+        transform-origin:bottom;
+    }
+
+    100%{
+
+        transform:scaleY(0);
+
+        transform-origin:bottom;
+    }
+
+}
+
+/* ================================
+RESPONSIVE
+================================ */
+
+@media(max-width:1024px){
+
+    .spHero-title{
+
+        font-size:5rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .spHero-section{
+
+        padding:0 24px;
+    }
+
+    .spHero-title{
+
+        font-size:3.5rem;
+    }
+
+    .spHero-description{
+
+        font-size:1.1rem;
+    }
+
+    .spHero-actions{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .spHero-primaryBtn{
+
+        width:100%;
+    }
+
+}

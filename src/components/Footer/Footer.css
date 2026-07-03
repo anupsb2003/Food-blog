@@ -1,50 +1,83 @@
 .footer {
   width: 100%;
   overflow: hidden;
+
+  background: #000;
 }
 
-/* Top White Section */
+/* =========================================
+TOP BLACK SECTION
+========================================= */
 
 .social-banner {
-  background: #f5f3ef;
+  background: #000;
+
   padding: 80px;
+
   overflow: hidden;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
 .footer-title {
   font-size: clamp(5rem, 10vw, 8rem);
-  line-height: .85;
-  color: #111;
+
+  line-height: 0.85;
+
+  color: #fff;
+
   font-family: Georgia, serif;
+
   font-weight: 500;
 }
 
-/* Main Footer */
+/* =========================================
+MAIN FOOTER
+========================================= */
 
 .footer-main {
-  background: #111;
+  background: #000;
+
   color: white;
 
   display: grid;
+
   grid-template-columns: 1.4fr 1fr 1fr;
 
   gap: 80px;
 
   padding: 80px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
-/* Left Section */
+/* =========================================
+LEFT SECTION
+========================================= */
 
 .footer-left h2 {
   font-size: 3rem;
+
   line-height: 1;
+
   font-family: Georgia, serif;
+
   font-weight: 500;
+
+  color: #fff;
 }
+
+/* =========================================
+SOCIAL ICONS
+========================================= */
 
 .social-icons {
   display: flex;
+
   gap: 18px;
+
   margin-top: 100px;
 }
 
@@ -53,20 +86,26 @@
   height: 55px;
 
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.3);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.18);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: white;
+
   font-size: 1.2rem;
 
-  transition: all .4s ease;
+  background: rgba(255, 255, 255, 0.04);
+
+  transition: all 0.4s ease;
 }
 
 .social-icons a:hover {
   background: white;
+
   color: black;
 
   transform:
@@ -74,52 +113,86 @@
     rotate(8deg);
 
   box-shadow:
-    0 10px 25px rgba(255,255,255,.15);
+    0 10px 25px
+    rgba(255, 255, 255, 0.15);
 }
 
-/* Contact */
+/* =========================================
+CONTACT
+========================================= */
 
 .footer-contact h3 {
   font-size: 1.5rem;
+
   margin-bottom: 10px;
+
+  color: #fff;
 }
 
 .footer-contact p {
-  color: #d0d0d0;
+  color: rgba(255, 255, 255, 0.7);
+
   margin-bottom: 35px;
+
   line-height: 1.7;
 }
 
-/* Newsletter */
+/* =========================================
+NEWSLETTER
+========================================= */
+
+.footer-newsletter h3 {
+  color: #fff;
+
+  margin-bottom: 12px;
+}
 
 .footer-newsletter p {
-  color: #d0d0d0;
+  color: rgba(255, 255, 255, 0.7);
+
   line-height: 1.8;
+
   margin-bottom: 25px;
 }
+
+/* =========================================
+INPUT
+========================================= */
 
 .footer-newsletter input {
   width: 100%;
 
   padding: 18px 22px;
 
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
 
-  background: rgba(255,255,255,.05);
+  background: rgba(255, 255, 255, 0.04);
 
   color: white;
 
   outline: none;
 
-  transition: .4s;
+  transition: 0.4s ease;
+
+  border-radius: 4px;
+}
+
+.footer-newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-newsletter input:focus {
-  border-color: #d8c8a3;
+  border-color: rgba(255, 255, 255, 0.4);
 
   box-shadow:
-    0 0 20px rgba(216,200,163,.2);
+    0 0 20px
+    rgba(255, 255, 255, 0.08);
 }
+
+/* =========================================
+BUTTON
+========================================= */
 
 .footer-newsletter button {
   margin-top: 20px;
@@ -128,36 +201,44 @@
 
   border: none;
 
-  background: white;
-  color: black;
+  background: #fff;
+
+  color: #000;
 
   font-weight: 600;
 
   cursor: pointer;
 
-  transition: .4s;
+  border-radius: 999px;
+
+  transition: 0.4s ease;
 }
 
 .footer-newsletter button:hover {
   transform: translateY(-5px);
 
   box-shadow:
-    0 12px 30px rgba(255,255,255,.15);
+    0 12px 30px
+    rgba(255, 255, 255, 0.15);
 }
 
-/* Bottom */
+/* =========================================
+BOTTOM
+========================================= */
 
 .footer-bottom {
-  background: #111;
+  background: #000;
 
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, 0.45);
 
   padding: 20px 80px 40px;
 
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
-/* Floating Social Icons */
+/* =========================================
+FLOATING SOCIAL ICONS
+========================================= */
 
 @keyframes floatIcon {
   0% {
@@ -178,19 +259,21 @@
 }
 
 .social-icons a:nth-child(2) {
-  animation: floatIcon 3s infinite .5s;
+  animation: floatIcon 3s infinite 0.5s;
 }
 
 .social-icons a:nth-child(3) {
   animation: floatIcon 3s infinite 1s;
 }
 
-/* Responsive */
+/* =========================================
+RESPONSIVE
+========================================= */
 
 @media (max-width: 900px) {
-
   .footer-main {
     grid-template-columns: 1fr;
+
     gap: 50px;
   }
 
@@ -208,5 +291,9 @@
 
   .footer-title {
     font-size: 4rem;
+  }
+
+  .social-icons {
+    margin-top: 50px;
   }
 }

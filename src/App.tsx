@@ -1,9 +1,22 @@
+
+import CoffeeScrollAnimation from "./components/CoffeeScrollAnimation/CoffeeScrollAnimation";
+import DosaScrollAnimation from "./components/DosaScrollAnimation/DosaScrollAnimation";
+import SpicesScrollAnimation from "./components/SpicesScrollAnimation/SpicesScrollAnimation";
 import Home from "./pages/Home";
 function App() {
   return (
-    <div>
+    <main
+      style={{
+        background: "#050505",
+        minHeight: "100vh",
+        overflowX: "hidden",
+      }}
+    >
       <Home />
-    </div>
+      {/* <DosaScrollAnimation /> */}
+      {/* <CoffeeScrollAnimation /> */}
+      {/* <SpicesScrollAnimation /> */}
+    </main>
   );
 }
 

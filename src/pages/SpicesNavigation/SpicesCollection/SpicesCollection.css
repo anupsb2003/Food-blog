@@ -1,0 +1,606 @@
+/* =========================================
+GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  font-family: "Times New Roman", serif;
+
+  color: white;
+}
+
+/* =========================================
+SECTION
+========================================= */
+
+.spiceCollection {
+  position: relative;
+
+  width: 100%;
+
+  padding: 110px 60px;
+
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  overflow: hidden;
+}
+
+/* Animated Glow Background */
+
+.spiceCollection::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  left: -180px;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+
+  animation: glowMove 10s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+.spiceCollection::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -220px;
+  right: -180px;
+
+  width: 450px;
+  height: 450px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05),
+    transparent 70%
+  );
+
+  animation: glowMove2 12s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.spiceCollectionHeader {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+
+  animation: fadeUp 1s ease;
+}
+
+.spiceLine {
+  width: 42%;
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.spiceLine::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(255, 255, 255),
+    transparent
+  );
+
+  animation: shimmer 4s linear infinite;
+}
+
+.spiceIcon {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 30px;
+
+  animation: rotateIcon 8s linear infinite;
+}
+
+.spiceCollectionTitle {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  font-size: clamp(3rem, 4vw, 5rem);
+
+  color: white;
+
+  font-family: "Times New Roman", serif;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 80px;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.spiceCollectionGrid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 28px;
+}
+
+/* =========================================
+GLASS CARD
+========================================= */
+
+.spiceCard {
+  position: relative;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(24px);
+
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+
+  cursor: pointer;
+
+  animation: fadeCard 1s ease;
+}
+
+/* Floating Effect */
+
+.spiceCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.spiceCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.spiceCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.spiceCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Shine */
+
+.spiceCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 80%;
+  height: 300%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: 0.9s ease;
+
+  pointer-events: none;
+}
+
+.spiceCard:hover::before {
+  left: 150%;
+}
+
+.spiceCard::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+.spiceCard:hover::after {
+  opacity: 1;
+}
+
+.spiceCard:hover {
+  transform:
+    translateY(-16px)
+    scale(1.02);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.spiceCardImage {
+  width: 100%;
+  height: 250px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  margin-bottom: 28px;
+
+  position: relative;
+}
+
+.spiceCardImage::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+.spiceCard:hover .spiceCardImage::after {
+  opacity: 1;
+}
+
+.spiceCardImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.spiceCard:hover img {
+  transform: scale(1.1);
+
+  filter: brightness(1.05);
+}
+
+/* =========================================
+TAG
+========================================= */
+
+.spiceTag {
+  display: inline-flex;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.4s ease;
+}
+
+.spiceCard:hover .spiceTag {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.spiceCardTitle {
+  font-size: 2rem;
+
+  line-height: 1.1;
+
+  color: white;
+
+  font-family: "Times New Roman", serif;
+
+  margin-bottom: 16px;
+
+  transition: opacity 0.4s ease;
+}
+
+.spiceCard:hover .spiceCardTitle {
+  opacity: 0.85;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.spiceCardDescription {
+  font-size: 1.05rem;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  line-height: 1.9;
+
+  margin-bottom: 30px;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.spiceExploreBtn {
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.spiceExploreBtn:hover {
+  transform: translateX(6px);
+
+  opacity: 0.8;
+}
+
+.spiceExploreBtn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: white;
+
+  transition: width 0.35s ease;
+}
+
+.spiceExploreBtn:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeCard {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(40px, 30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glowMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, -40px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .spiceCollectionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .spiceCollection {
+    padding: 80px 24px;
+  }
+
+  .spiceCollectionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .spiceCollectionTitle {
+    margin-bottom: 60px;
+
+    font-size: 2.7rem;
+  }
+
+  .spiceCardTitle {
+    font-size: 1.9rem;
+  }
+
+  .spiceCardDescription {
+    font-size: 1rem;
+  }
+
+  .spiceCardImage {
+    height: 220px;
+  }
+}

@@ -1,0 +1,84 @@
+/* DosaNavigation.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* MAIN WRAPPER */
+
+.luxury-dosa-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* VIDEO */
+
+.luxury-dosa-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+}
+
+/* OVERLAY */
+
+.luxury-dosa-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: -2;
+}
+
+/* SCROLLABLE CONTENT */
+
+.luxury-dosa-scroll-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* CUSTOM SCROLLBAR */
+
+.luxury-dosa-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.luxury-dosa-scroll-container::-webkit-scrollbar-thumb {
+  background: #9a5c2f;
+  border-radius: 20px;
+}
+
+.luxury-dosa-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nav-logo {
+  position: fixed;
+  left: 500px;
+  width: 120px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

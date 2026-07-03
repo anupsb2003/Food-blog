@@ -1,0 +1,520 @@
+/* =========================================
+GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  font-family: "Times New Roman", serif;
+
+  color: white;
+}
+
+/* =========================================
+SECTION
+========================================= */
+
+.spiceNews {
+  position: relative;
+
+  width: 100%;
+
+  padding: 100px 24px;
+
+  background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.45)
+    );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* Animated Glow Background */
+
+.spiceNews::before {
+  content: "";
+
+  position: absolute;
+
+  top: -220px;
+  left: -220px;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.08),
+    transparent 70%
+  );
+
+  animation: glowMove 10s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+.spiceNews::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -220px;
+  right: -180px;
+
+  width: 460px;
+  height: 460px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.05),
+    transparent 70%
+  );
+
+  animation: glowMove2 12s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.spiceNewsContent {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 950px;
+
+  text-align: center;
+
+  padding: 80px 65px;
+
+  border-radius: 34px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(24px);
+
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.3);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* Glass Hover */
+
+.spiceNewsContent:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.38);
+}
+
+/* Glass Shine */
+
+.spiceNewsContent::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 60%;
+  height: 300%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.1),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: 1s ease;
+}
+
+.spiceNewsContent:hover::before {
+  left: 160%;
+}
+
+/* Soft Glow Overlay */
+
+.spiceNewsContent::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+.spiceNewsContent:hover::after {
+  opacity: 1;
+}
+
+/* =========================================
+TAG
+========================================= */
+
+.spiceNewsTag {
+  display: inline-block;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.72);
+
+  margin-bottom: 28px;
+
+  position: relative;
+
+  animation: fadeUp 1s ease;
+}
+
+.spiceNewsTag::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  bottom: -10px;
+
+  width: 60%;
+
+  height: 1px;
+
+  background: rgba(255,255,255,0.4);
+
+  animation: lineGrow 2s ease infinite alternate;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.spiceNewsTitle {
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  line-height: 1.05;
+
+  color: white;
+
+  font-family: "Times New Roman", serif;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 55px;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.spiceNewsForm {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 32px;
+
+  animation: fadeUp 1.4s ease;
+}
+
+/* =========================================
+INPUT
+========================================= */
+
+.spiceNewsForm input {
+  width: 440px;
+
+  height: 68px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(14px);
+
+  color: white;
+
+  padding: 0 26px;
+
+  font-size: 16px;
+
+  font-family: "Times New Roman", serif;
+
+  outline: none;
+
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.spiceNewsForm input::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.spiceNewsForm input:focus {
+  border-color: rgba(255,255,255,0.35);
+
+  background: rgba(255,255,255,0.08);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.spiceNewsForm button {
+  height: 68px;
+
+  padding: 0 42px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  backdrop-filter: blur(16px);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* Button Shine */
+
+.spiceNewsForm button::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 60%;
+  height: 300%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: 0.9s ease;
+}
+
+.spiceNewsForm button:hover::before {
+  left: 150%;
+}
+
+.spiceNewsForm button:hover {
+  transform:
+    translateY(-6px)
+    scale(1.02);
+
+  background: rgba(255,255,255,0.14);
+
+  border-color: rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.3);
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.spiceNewsDescription {
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
+  color: rgba(255,255,255,0.65);
+
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  animation: fadeUp 1.6s ease;
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(40px, 30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glowMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, -40px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    width: 20%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .spiceNews {
+    padding: 100px 20px;
+  }
+
+  .spiceNewsContent {
+    padding: 55px 24px;
+  }
+
+  .spiceNewsTitle {
+    font-size: 2.5rem;
+  }
+
+  .spiceNewsForm {
+    flex-direction: column;
+  }
+
+  .spiceNewsForm input {
+    width: 100%;
+  }
+
+  .spiceNewsForm button {
+    width: 100%;
+  }
+
+  .spiceNewsDescription {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+}

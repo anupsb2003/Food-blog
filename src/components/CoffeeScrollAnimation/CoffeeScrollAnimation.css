@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #000;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================================
+SECTION
+========================================= */
+
+.spices-scrollSection {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+/* =========================================
+MAIN CONTAINER
+========================================= */
+
+.spices-container {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+/* =========================================
+IMAGE SIDE (75%)
+========================================= */
+
+.spices-imageSide {
+  width: 74%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 26px;
+
+  background: #000;
+}
+
+/* =========================================
+IMAGE WRAPPER
+========================================= */
+
+.spices-imageWrapper {
+  position: relative;
+
+  width: 100%;
+  height: 92vh;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: #000;
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.65),
+    0 0 60px rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.spices-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+/* =========================================
+CONTENT SIDE (25%)
+========================================= */
+
+.spices-contentSide {
+  width: 25%;
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+
+  padding: 40px;
+
+  background: #050505;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.06);
+
+  z-index: 10;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.spices-content {
+  width: 100%;
+
+  color: white;
+}
+
+/* =========================================
+TAG
+========================================= */
+
+.spices-tag {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #d9a441;
+}
+
+/* =========================================
+TITLE
+========================================= */
+
+.spices-title {
+  font-size: clamp(5rem, 5vw, 5rem);
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.spices-description {
+  font-size: 20px;
+
+  line-height: 2;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  margin-bottom: 32px;
+}
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.spices-buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+/* =========================================
+BUTTON COMMON
+========================================= */
+
+.spices-buttons button {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  border-radius: 999px;
+
+  transition: 0.35s ease;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================
+PRIMARY BUTTON
+========================================= */
+
+.spices-primaryBtn {
+  padding: 15px 22px;
+
+  background: white;
+  color: black;
+}
+
+.spices-primaryBtn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 40px rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+SECONDARY BUTTON
+========================================= */
+
+.spices-secondaryBtn {
+  padding: 15px 22px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(12px);
+}
+
+.spices-secondaryBtn:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+NO FRAMES
+========================================= */
+
+.spices-noFrames {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+
+  color: white;
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .spices-container {
+    flex-direction: column;
+  }
+
+  .spices-imageSide,
+  .spices-contentSide {
+    width: 100%;
+  }
+
+  .spices-imageSide {
+    height: 58vh;
+  }
+
+  .spices-contentSide {
+    height: auto;
+
+    padding: 40px;
+
+    border-left: none;
+  }
+
+  .spices-imageWrapper {
+    height: 52vh;
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .spices-imageSide {
+    padding: 16px;
+  }
+
+  .spices-contentSide {
+    padding: 24px;
+  }
+
+  .spices-imageWrapper {
+    height: 42vh;
+
+    border-radius: 18px;
+  }
+
+  .spices-title {
+    font-size: 2.5rem;
+  }
+
+  .spices-description {
+    font-size: 14px;
+  }
+}

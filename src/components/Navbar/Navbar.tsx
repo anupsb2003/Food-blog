@@ -9,12 +9,10 @@ function Navbar() {
 
       <nav>
         <ul className="navbar-links">
-          <li>The Diaries</li>
-          <li>Label Lab</li>
-          <li>Browning Files</li>
-          <li>Field Notes</li>
-          <li>About</li>
-          <li>Subscription</li>
+          <li>Home</li>
+          <li>Spices</li>
+          <li>Coffee</li>
+          <li>Contact US</li>
         </ul>
       </nav>
     </header>

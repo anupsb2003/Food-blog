@@ -153,9 +153,13 @@ function Footer() {
           </h2>
 
           <div className="social-icons">
-            <a href="#">
-              <FaInstagram />
-            </a>
+            <a
+  href="https://www.instagram.com/itz.ravi_17?igsh=M3F3MWNkcmUwZDMw/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaInstagram />
+</a>
 
             <a href="#">
               <FaXTwitter />
@@ -172,7 +176,7 @@ function Footer() {
           <p>foodlab@gmail.com</p>
 
           <h3>Phone</h3>
-          <p>+91 9876543210</p>
+          <p>+91 9980559321</p>
         </div>
 
         <div className="footer-newsletter">

@@ -1,5 +1,3 @@
-/* styles.css */
-
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 * {
@@ -14,16 +12,11 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
-.hero-d {
+/* HERO SECTION */
+.dosa-hero-section {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #f8f4ec 0%,
-    #f2eadf 50%,
-    #efe5d7 100%
-  );
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,41 +24,42 @@ body {
   padding: 60px;
 }
 
-/* SOFT BACKGROUND BLUR */
-.bg-overlay {
+/* BACKGROUND BLUR */
+.dosa-bg-overlay {
   position: absolute;
   width: 900px;
   height: 900px;
   background: radial-gradient(circle, #d8b46b50 0%, transparent 70%);
   filter: blur(100px);
-  animation: pulse 8s ease-in-out infinite;
+  animation: dosaPulse 8s ease-in-out infinite;
 }
 
-/* FLOATING CIRCLES */
-.floating {
+/* FLOATING SHAPES */
+.dosa-floating-shape {
   position: absolute;
   border-radius: 50%;
   background: rgba(194, 148, 63, 0.12);
   backdrop-filter: blur(10px);
 }
 
-.floating-1 {
+.dosa-floating-shape-one {
   width: 300px;
   height: 300px;
   top: -80px;
   right: -80px;
-  animation: float 8s ease-in-out infinite;
+  animation: dosaFloat 8s ease-in-out infinite;
 }
 
-.floating-2 {
+.dosa-floating-shape-two {
   width: 200px;
   height: 200px;
   bottom: -40px;
   left: -40px;
-  animation: floatReverse 10s ease-in-out infinite;
+  animation: dosaFloatReverse 10s ease-in-out infinite;
 }
 
-.container {
+/* CONTAINER */
+.dosa-layout-container {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -76,12 +70,12 @@ body {
   align-items: center;
 }
 
-/* LEFT SECTION */
-.left-d {
-  animation: fadeUp 1s ease forwards;
+/* LEFT CONTENT */
+.dosa-left-content {
+  animation: dosaFadeUp 1s ease forwards;
 }
 
-.tag {
+.dosa-tagline {
   letter-spacing: 5px;
   color: #8d6500;
   font-size: 14px;
@@ -89,7 +83,7 @@ body {
   margin-bottom: 20px;
 }
 
-.title-d {
+.dosa-main-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 5rem;
   line-height: 0.95;
@@ -97,13 +91,13 @@ body {
   margin-bottom: 30px;
 }
 
-.title-d span {
+.dosa-title-highlight {
   font-style: italic;
   font-weight: 500;
   color: #4a2c12;
 }
 
-.description {
+.dosa-description-text {
   max-width: 560px;
   color: #5f554b;
   line-height: 1.8;
@@ -112,13 +106,13 @@ body {
 }
 
 /* BUTTONS */
-.buttons {
+.dosa-button-group {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.menu-btn {
+.dosa-menu-button {
   padding: 18px 34px;
   border: none;
   background: linear-gradient(135deg, #8a6200, #b8840f);
@@ -132,12 +126,12 @@ body {
   box-shadow: 0 10px 30px rgba(167, 122, 18, 0.25);
 }
 
-.menu-btn:hover {
+.dosa-menu-button:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 15px 35px rgba(167, 122, 18, 0.35);
 }
 
-.ritual-btn {
+.dosa-ritual-button {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -150,7 +144,7 @@ body {
   text-transform: uppercase;
 }
 
-.play-icon {
+.dosa-play-icon-wrapper {
   width: 58px;
   height: 58px;
   border-radius: 18px;
@@ -164,25 +158,25 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.ritual-btn:hover .play-icon {
+.dosa-ritual-button:hover .dosa-play-icon-wrapper {
   transform: scale(1.08) rotate(6deg);
   background: #fff;
 }
 
-/* RIGHT */
-.right {
+/* RIGHT IMAGE */
+.dosa-right-visual {
   display: flex;
   justify-content: center;
-  animation: fadeRight 1.2s ease forwards;
+  animation: dosaFadeRight 1.2s ease forwards;
 }
 
-.image-card {
+.dosa-image-card-wrapper {
   position: relative;
   width: 100%;
   max-width: 560px;
 }
 
-.image-card img {
+.dosa-hero-image {
   width: 100%;
   border-radius: 28px;
   object-fit: cover;
@@ -190,12 +184,12 @@ body {
   transition: transform 0.6s ease;
 }
 
-.image-card:hover img {
+.dosa-image-card-wrapper:hover .dosa-hero-image {
   transform: scale(1.03);
 }
 
-/* GLASS CARD */
-.info-card {
+/* INFO CARD */
+.dosa-floating-info-card {
   position: absolute;
   bottom: -40px;
   right: -40px;
@@ -205,10 +199,10 @@ body {
   padding: 28px;
   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  animation: floatCard 5s ease-in-out infinite;
+  animation: dosaFloatCard 5s ease-in-out infinite;
 }
 
-.info-card h3 {
+.dosa-info-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   color: #7b5500;
@@ -216,80 +210,90 @@ body {
   font-style: italic;
 }
 
-.info-card p {
+.dosa-info-description {
   color: #4e463d;
   line-height: 1.6;
 }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
+@keyframes dosaFadeUp {
   from {
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fadeRight {
+@keyframes dosaFadeRight {
   from {
     opacity: 0;
     transform: translateX(80px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@keyframes float {
+@keyframes dosaFloat {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(30px);
   }
+
   100% {
     transform: translateY(0px);
   }
 }
 
-@keyframes floatReverse {
+@keyframes dosaFloatReverse {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-25px);
   }
+
   100% {
     transform: translateY(0px);
   }
 }
 
-@keyframes pulse {
+@keyframes dosaPulse {
   0% {
     transform: scale(1);
     opacity: 0.6;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1);
     opacity: 0.6;
   }
 }
 
-@keyframes floatCard {
+@keyframes dosaFloatCard {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -297,22 +301,22 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .container {
+  .dosa-layout-container {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .left {
+  .dosa-left-content {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .title {
+  .dosa-main-title {
     font-size: 4rem;
   }
 
-  .info-card {
+  .dosa-floating-info-card {
     right: 50%;
     transform: translateX(50%);
     bottom: -50px;
@@ -320,27 +324,27 @@ body {
 }
 
 @media (max-width: 600px) {
-  .hero {
+  .dosa-hero-section {
     padding: 30px 20px;
   }
 
-  .title {
+  .dosa-main-title {
     font-size: 3rem;
   }
 
-  .description {
+  .dosa-description-text {
     font-size: 1rem;
   }
 
-  .buttons {
+  .dosa-button-group {
     flex-direction: column;
   }
 
-  .menu-btn {
+  .dosa-menu-button {
     width: 100%;
   }
 
-  .info-card {
+  .dosa-floating-info-card {
     width: 90%;
     right: 5%;
     transform: none;

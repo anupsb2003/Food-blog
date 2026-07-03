@@ -1,63 +1,37 @@
-// DosaNavbar.tsx
-
 import "./DosaNavbar.css";
+
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function DosaNavbar() {
   const navigate = useNavigate();
 
   return (
     <nav className="dosa-navbar">
-
       {/* LEFT */}
-      <div className="nav-left">
+      <button
+        className="dosa-back-btn"
+        onClick={() => navigate(-1)}
+      >
+        <FaArrowLeft />
+        <span>Back</span>
+      </button>
 
-        <button
-          className="back-btn"
-          onClick={() => navigate(-1)}
-        >
-          <FaArrowLeft />
-        </button>
-
-        <h1 className="nav-logo">
-          HeritageBite
-        </h1>
-
+      {/* CENTER */}
+      <div className="dosa-navbar-logo">
+        DOSA HOUSE
       </div>
 
-      {/* CENTER LINKS */}
-      <div className="nav-links">
+      {/* RIGHT */}
+      <div className="dosa-navbar-links">
+        <a href="#home">Home</a>
 
-        <Link to="/">Home</Link>
 
-        <a href="#ritual">
-          Ritual
-        </a>
+        <a href="#specials">Specials</a>
 
-        <a href="#science">
-          Science
-        </a>
 
-        <a href="#pairings">
-          Pairings
-        </a>
-
-        <a href="#footer">
-          Contact
-        </a>
-
+        <a href="#contact">Contact</a>
       </div>
-
-      {/* RIGHT BUTTON */}
-      <div className="nav-right">
-
-        <button className="reserve-btn">
-          Reserve Table
-        </button>
-
-      </div>
-
     </nav>
   );
 }

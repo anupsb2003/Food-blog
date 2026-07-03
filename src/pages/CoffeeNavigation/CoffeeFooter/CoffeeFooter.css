@@ -1,0 +1,337 @@
+/* CoffeeFooter.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN FOOTER */
+
+.premium-coffee-footer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 70px 60px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  background:
+    rgba(35, 10, 4, 0);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 -10px 40px rgba(0,0,0,0.18);
+
+  font-family: "Inter", sans-serif;
+}
+
+/* FLOATING BLURS */
+
+.footer-blur {
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: 0.18;
+
+  animation: floatingBlur 10s ease-in-out infinite;
+}
+
+.footer-blur-one {
+  width: 300px;
+  height: 300px;
+
+  background: #ff9d52;
+
+  top: -120px;
+  left: -100px;
+}
+
+.footer-blur-two {
+  width: 260px;
+  height: 260px;
+
+  background: #ffffff;
+
+  bottom: -100px;
+  right: -80px;
+
+  animation-delay: 3s;
+}
+
+/* CONTAINER */
+
+.coffee-footer-container {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 50px;
+
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+
+.coffee-footer-left {
+  max-width: 340px;
+
+  animation: fadeLeft 1s ease;
+}
+
+.coffee-footer-logo {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 3rem;
+
+  color: white;
+
+  margin-bottom: 18px;
+
+  letter-spacing: 1px;
+}
+
+.coffee-footer-description {
+  font-size: 1.1rem;
+
+  line-height: 1.9;
+
+  color: rgba(255,255,255,0.78);
+}
+
+/* CENTER */
+
+.coffee-footer-center {
+  display: flex;
+
+  gap: 35px;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding-top: 20px;
+
+  animation: fadeUp 1s ease;
+}
+
+.coffee-footer-center a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: rgba(255,255,255,0.8);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  transition: all 0.35s ease;
+}
+
+.coffee-footer-center a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+  height: 1px;
+
+  background: #f6c28b;
+
+  transition: width 0.35s ease;
+}
+
+.coffee-footer-center a:hover {
+  color: #f6c28b;
+}
+
+.coffee-footer-center a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT */
+
+.coffee-footer-right {
+  max-width: 320px;
+
+  text-align: right;
+
+  animation: fadeRight 1s ease;
+}
+
+.coffee-footer-copy {
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.72);
+
+  margin-bottom: 25px;
+
+  font-style: italic;
+}
+
+/* ICONS */
+
+.coffee-footer-icons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 18px;
+}
+
+.coffee-footer-icons button {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.coffee-footer-icons button:hover {
+  transform: translateY(-6px) scale(1.05);
+
+  background:
+    linear-gradient(
+      135deg,
+      #8c451e,
+      #d18a4b
+    );
+
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingBlur {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+  .coffee-footer-container {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .coffee-footer-right {
+    text-align: center;
+  }
+
+  .coffee-footer-icons {
+    justify-content: center;
+  }
+
+  .coffee-footer-center {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .premium-coffee-footer {
+    padding: 60px 25px;
+  }
+
+  .coffee-footer-logo {
+    font-size: 2.4rem;
+  }
+
+  .coffee-footer-description,
+  .coffee-footer-copy {
+    font-size: 1rem;
+  }
+
+  .coffee-footer-center {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+}

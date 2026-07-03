@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #000;
+  font-family: "Inter", sans-serif;
+}
+
+/* =======================================
+   SECTION
+======================================= */
+
+.dosa-scroll-section {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+/* =======================================
+   STICKY CONTAINER
+======================================= */
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+/* =======================================
+   DARK OVERLAY
+======================================= */
+
+.sticky-container::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+
+  z-index: 2;
+}
+
+/* =======================================
+   IMAGE
+======================================= */
+
+.dosa-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* Move dosa slightly right */
+  object-position: 68% center;
+
+  user-select: none;
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* =======================================
+   CONTENT
+======================================= */
+
+.dosa-content {
+  position: absolute;
+
+  top: 50%;
+  left: 7vw;
+
+  transform: translateY(-50%);
+
+  width: 40%;
+  max-width: 560px;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: #fff;
+}
+
+/* =======================================
+   TAG
+======================================= */
+
+.dosa-tag {
+  font-size: 13px;
+  text-transform: uppercase;
+
+  color: #d8b15d;
+
+
+  opacity: 0.95;
+}
+
+/* =======================================
+   TITLE
+======================================= */
+
+.dosa-title {
+  display: flex;
+  flex-direction: column;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  line-height: 0.88;
+
+  font-weight: 800;
+
+  margin-bottom: 30px;
+}
+
+.dosa-line {
+  display: block;
+}
+
+/* =======================================
+   DESCRIPTION
+======================================= */
+
+.dosa-description {
+  max-width: 470px;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  margin-bottom: 42px;
+}
+
+/* =======================================
+   BUTTONS
+======================================= */
+
+.dosa-buttons {
+  display: flex;
+
+  gap: 18px;
+
+  pointer-events: auto;
+}
+
+.dosa-buttons button {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+}
+
+/* =======================================
+   PRIMARY
+======================================= */
+
+.dosa-primary {
+  background: #fff;
+
+  color: #000;
+
+  padding: 16px 34px;
+}
+
+.dosa-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.18);
+}
+
+/* =======================================
+   SECONDARY
+======================================= */
+
+.dosa-secondary {
+  padding: 16px 34px;
+
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(12px);
+}
+
+.dosa-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-4px);
+}
+
+/* =======================================
+   NO FRAMES
+======================================= */
+
+.no-frames {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  background: black;
+}
+
+/* =======================================
+   TABLET
+======================================= */
+
+@media (max-width: 1024px) {
+  .dosa-content {
+    width: 48%;
+  }
+
+  .dosa-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  .dosa-description {
+    font-size: 17px;
+  }
+
+  .dosa-image {
+    object-position: 72% center;
+  }
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width: 768px) {
+  .sticky-container {
+    height: 100vh;
+  }
+
+  .sticky-container::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.35) 30%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  }
+
+  .dosa-image {
+    object-position: 72% center;
+  }
+
+  .dosa-content {
+    left: 24px;
+    right: 24px;
+
+    width: calc(100% - 48px);
+
+    top: auto;
+    bottom: 80px;
+
+    transform: none;
+
+    max-width: 100%;
+  }
+
+  .dosa-tag {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+  }
+
+  .dosa-title {
+    font-size: 3rem;
+
+    line-height: 0.95;
+  }
+
+  .dosa-description {
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .dosa-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .dosa-buttons button {
+    width: fit-content;
+  }
+}

@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN SECTION */
+
+.coffee-brass-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 7%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+   background:
+    rgba(35, 10, 4, 0);
+
+}
+
+/* FLOATING BLUR */
+
+.coffee-brass-blur {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.25;
+
+  animation: floatingGlow 10s ease-in-out infinite;
+}
+
+.blur-left {
+  width: 350px;
+  height: 350px;
+
+  background: rgba(176, 103, 36, 0.4);
+
+  top: -120px;
+  left: -120px;
+}
+
+.blur-right {
+  width: 320px;
+  height: 320px;
+
+  background: rgba(255, 220, 180, 0.25);
+
+  bottom: -100px;
+  right: -100px;
+
+  animation-delay: 2s;
+}
+
+/* CONTAINER */
+
+.coffee-brass-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1350px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+  z-index: 2;
+}
+
+/* IMAGE SIDE */
+
+.coffee-brass-image-wrapper {
+  position: relative;
+
+  animation: slideLeft 1.2s ease;
+}
+
+.coffee-brass-image-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.25);
+
+  transition: all 0.45s ease;
+}
+
+.coffee-brass-image-card:hover {
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+.coffee-brass-image {
+  width: 100%;
+  height: 720px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.7s ease;
+}
+
+.coffee-brass-image-card:hover .coffee-brass-image {
+  transform: scale(1.06);
+}
+
+/* CONTENT */
+
+.coffee-brass-content {
+  position: relative;
+
+  z-index: 3;
+
+  animation: slideRight 1.2s ease;
+}
+
+.coffee-brass-tag {
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 24px;
+}
+
+.coffee-brass-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(3.5rem, 5.5vw, 5.5rem);
+
+  line-height: 1.1;
+
+  color: #ffffff;
+
+  margin-bottom: 30px;
+}
+
+.coffee-brass-description {
+  font-family: "Inter", sans-serif;
+
+  font-size: 1.4rem;
+
+  line-height: 2;
+
+  color: rgba(255, 255, 255, 0.891);
+
+  margin-bottom: 45px;
+
+  max-width: 650px;
+}
+
+/* FEATURES */x
+
+.coffee-brass-features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 45px;
+}
+
+.coffee-brass-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 1.08rem;
+  color: #ffffff;
+
+  transition: all 0.35s ease;
+}
+
+.coffee-brass-feature:hover {
+  transform: translateX(10px);
+}
+
+.coffee-brass-feature svg {
+  color: #8cff00;
+
+  font-size: 1.2rem;
+}
+
+/* BUTTON */
+
+.coffee-brass-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: all 0.35s ease;
+}
+
+.coffee-brass-button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 8px;
+
+  width: 100%;
+  height: 1.5px;
+
+  background: #cbbcb1;
+
+  transition: width 0.35s ease;
+}
+
+.coffee-brass-button:hover {
+  gap: 22px;
+}
+
+.coffee-brass-button:hover::after {
+  width: 70%;
+}
+
+/* HUGE BG TEXT */
+
+.coffee-bg-text {
+  position: absolute;
+
+  top: 50%;
+  right: -80px;
+
+  transform: translateY(-50%);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18rem;
+
+  color: rgba(70, 35, 15, 0.03);
+
+  letter-spacing: 10px;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 1;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatingGlow {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .coffee-brass-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .coffee-brass-image {
+    height: 550px;
+  }
+
+  .coffee-bg-text {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .coffee-brass-section {
+    padding: 90px 20px;
+  }
+
+  .coffee-brass-title {
+    font-size: 3rem;
+  }
+
+  .coffee-brass-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .coffee-brass-image {
+    height: 420px;
+  }
+
+  .coffee-brass-button {
+    font-size: 1.2rem;
+  }
+}

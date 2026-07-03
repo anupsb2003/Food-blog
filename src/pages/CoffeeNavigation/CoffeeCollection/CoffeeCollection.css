@@ -1,0 +1,457 @@
+/* CoffeeCollection.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN SECTION */
+
+.coffee-collection-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 100px 70px;
+
+  overflow: hidden;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* BACKGROUND BLURS */
+
+.coffee-bg-blur {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.18;
+
+  z-index: 0;
+
+  animation: floatingBlur 10s ease-in-out infinite;
+}
+
+.coffee-blur-1 {
+  width: 420px;
+  height: 420px;
+
+  background: #c47a3b;
+
+  top: -120px;
+  left: -120px;
+}
+
+.coffee-blur-2 {
+  width: 350px;
+  height: 350px;
+
+  background: #ffffff;
+
+  bottom: -100px;
+  right: -100px;
+
+  animation-delay: 3s;
+}
+
+/* HEADER */
+
+.coffee-collection-header {
+  position: relative;
+
+  text-align: center;
+
+  margin-bottom: 70px;
+
+  z-index: 2;
+
+  animation: fadeUp 1s ease;
+}
+
+.coffee-collection-subtitle {
+  font-size: 1rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.7);
+
+  margin-bottom: 16px;
+}
+
+.coffee-collection-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  color: white;
+
+  text-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* GRID */
+
+.coffee-collection-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr 1fr;
+
+  gap: 35px;
+
+  z-index: 2;
+}
+
+/* GLASS EFFECT */
+
+.coffee-large-card,
+.coffee-small-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  backdrop-filter: blur(20px);
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.18),
+    inset 0 1px 1px rgba(255,255,255,0.12);
+
+  transition: all 0.45s ease;
+
+  animation: cardReveal 1s ease;
+}
+
+.coffee-large-card:hover,
+.coffee-small-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.3),
+    inset 0 1px 1px rgba(255,255,255,0.15);
+}
+
+/* GLASS OVERLAY */
+
+.coffee-card-glass {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.04)
+    );
+
+  z-index: 0;
+}
+
+/* CONTENT */
+
+.coffee-card-content,
+.coffee-small-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* LEFT CARD */
+
+.coffee-large-card {
+  padding: 35px;
+}
+
+.coffee-card-tag,
+.coffee-small-tag {
+  font-size: 0.9rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #f3c58f;
+
+  margin-bottom: 18px;
+
+  font-weight: 600;
+}
+
+.coffee-card-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 3rem;
+
+  color: white;
+
+  margin-bottom: 18px;
+}
+
+.coffee-card-description {
+  font-size: 1.1rem;
+
+  color: rgba(255,255,255,0.82);
+
+  margin-bottom: 35px;
+
+  line-height: 1.8;
+}
+
+/* IMAGE */
+
+.coffee-image-wrapper {
+  width: 100%;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  margin-bottom: 30px;
+}
+
+.coffee-card-image {
+  width: 100%;
+  height: 520px;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.coffee-large-card:hover .coffee-card-image {
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+
+.coffee-add-btn {
+  width: 100%;
+  height: 62px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7b3f1d,
+      #c7854c
+    );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.coffee-add-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* RIGHT GRID */
+
+.coffee-right-grid {
+  display: grid;
+
+  gap: 35px;
+}
+
+/* SMALL CARD */
+
+.coffee-small-card {
+  padding: 30px;
+
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+}
+
+.coffee-small-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  width: 100%;
+}
+
+/* SMALL IMAGE */
+
+.coffee-small-image {
+  width: 210px;
+  height: 210px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  transition: transform 0.45s ease;
+}
+
+.coffee-small-card:hover .coffee-small-image {
+  transform: scale(1.06);
+}
+
+/* SMALL CONTENT */
+
+.coffee-small-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 2.2rem;
+
+  color: white;
+
+  margin-bottom: 18px;
+}
+
+.coffee-link-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #f5c389;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  position: relative;
+
+  padding-bottom: 6px;
+
+  transition: all 0.3s ease;
+}
+
+.coffee-link-btn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0%;
+  height: 1px;
+
+  background: #f5c389;
+
+  transition: width 0.35s ease;
+}
+
+.coffee-link-btn:hover::after {
+  width: 100%;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatingBlur {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .coffee-collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-small-content {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .coffee-small-image {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .coffee-collection-section {
+    padding: 80px 20px;
+  }
+
+  .coffee-card-title {
+    font-size: 2.2rem;
+  }
+
+  .coffee-small-title {
+    font-size: 1.8rem;
+  }
+
+  .coffee-card-image {
+    height: 360px;
+  }
+
+  .coffee-small-card {
+    min-height: auto;
+  }
+
+  .coffee-large-card,
+  .coffee-small-card {
+    border-radius: 24px;
+  }
+}

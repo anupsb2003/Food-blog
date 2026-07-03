@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #f5ede1;
+  background: rgba(255, 255, 255, 0.08);
   font-family: "Inter", sans-serif;
 }
 
@@ -18,12 +18,7 @@ body {
 .dosa-footer {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    #f6efe4 0%,
-    #f4ebde 50%,
-    #f8f2e8 100%
-  );
+  background: rgba(255, 255, 255, 0.08);
   padding: 70px 50px 35px;
 }
 
@@ -151,11 +146,11 @@ body {
   background: transparent;
   padding: 0 18px;
   font-size: 1rem;
-  color: #5d5349;
+  color: #c7b8aa;
 }
 
 .newsletter-box input::placeholder {
-  color: #b7a890;
+  color: #ffffff;
 }
 
 .newsletter-box button {
@@ -163,7 +158,7 @@ body {
   height: 100%;
   border: none;
   background: transparent;
-  color: #8d6200;
+  color: #ffffff;
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -193,7 +188,7 @@ body {
 }
 
 .footer-bottom-d p {
-  color: #9b8d7d;
+  color: #ffffff;
   letter-spacing: 2px;
   font-size: 0.9rem;
   font-weight: 600;

@@ -10,136 +10,148 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
   useEffect(() => {
-    const tl = gsap.timeline();
-
-    tl.from(".hero-tag", {
-      y: 50,
-      opacity: 0,
-      duration: 1,
+  const tl = gsap.timeline({
+    defaults: {
       ease: "power4.out",
-    })
-      .from(
-        ".hero-title",
-        {
-          y: 150,
-          opacity: 0,
-          duration: 1.2,
-          ease: "power4.out",
-        },
-        "-=0.5"
-      )
-      .from(
-        ".hero-description",
-        {
-          y: 80,
-          opacity: 0,
-          duration: 1,
-        },
-        "-=0.8"
-      )
-      .from(
-        ".hero-buttons",
-        {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-        },
-        "-=0.7"
-      )
-      .from(
-        ".hero-video",
-        {
-          x: 300,
-          opacity: 0,
-          duration: 1.5,
-          ease: "power4.out",
-        },
-        "-=1"
-      );
+    },
+  });
 
-    gsap.to(".hero-content", {
-      y: -180,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".hero-video", {
-      y: -250,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".hero-bg", {
-      scale: 1.2,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".hero-footer", {
+  tl.fromTo(
+    ".fsHero-tag",
+    {
       opacity: 0,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom center",
-        scrub: true,
+      y: 40,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    }
+  )
+    .fromTo(
+      ".fsHero-title",
+      {
+        opacity: 0,
+        y: 80,
       },
-    });
-  }, []);
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      }
+    )
+    .fromTo(
+      ".fsHero-description",
+      {
+        opacity: 0,
+        y: 40,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+      }
+    )
+    .fromTo(
+      ".fsHero-buttons button",
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 0.8,
+      }
+    )
+    .fromTo(
+      ".fsHero-footer",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+      }
+    );
+
+  gsap.to(".fsHero-content", {
+    y: -180,
+    scrollTrigger: {
+      trigger: ".fsHero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".fsHero-background", {
+    scale: 1.2,
+    scrollTrigger: {
+      trigger: ".fsHero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".fsHero-footer", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".fsHero-section",
+      start: "top top",
+      end: "bottom center",
+      scrub: true,
+    },
+  });
+}, []);
 
   return (
-    <section className="hero">
+    <section className="fsHero-section">
       <div
-        className="hero-bg"
+        className="fsHero-background"
         style={{
           backgroundImage: `url(${HeroImage})`,
         }}
       />
 
-      <div className="hero-overlay" />
-
-      <div className="hero-content">
-        <span className="hero-tag">
+      <div className="fsHero-overlay" />
+      <div className="fsHero-content">
+        <span className="fsHero-tag">
           A FOOD SCIENCE JOURNAL
         </span>
+        <h1 className="fsHero-title">
+          <span className="fsHero-titleLine">
+            Every meal has
+          </span>
 
-        <h1 className="hero-title">
-          Every meal has
-          <br />
-          a secret the label
-          <br />
-          never tells you.
+          <span className="fsHero-titleLine">
+            a secret the label
+          </span>
+
+          <span className="fsHero-titleLine">
+            never tells you.
+          </span>
         </h1>
-
-        <p className="hero-description">
+        <p className="fsHero-description">
           Exploring food science, ingredients,
           cooking culture, labels, traditional
           methods and honest food reviews.
         </p>
 
-        <div className="hero-buttons">
-          <button className="primary-btn">
+        <div className="fsHero-buttons">
+          <button className="fsHero-primaryButton">
             Start Reading
           </button>
 
-          <button className="secondary-btn">
+          <button className="fsHero-secondaryButton">
             Label Lab
           </button>
         </div>
       </div>
 
-      <div className="hero-footer">
+      <div className="fsHero-footer">
         <span>Scroll For More</span>
         <span>Est. 2026</span>
       </div>

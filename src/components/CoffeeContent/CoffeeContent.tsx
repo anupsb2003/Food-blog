@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CoffeeVideo from "../../assets/CoffeBackground.mp4";
 import CoffeeCup from "../../assets/CoffeImage.png";
 import "./CoffeeContent.css";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,13 @@ function CoffeeContent() {
   const sectionRef = useRef<HTMLElement>(null);
 
   const [showContent, setShowContent] = useState(false);
+  const navigate = useNavigate();
 
+  const handleOnClick = () => {
+    setTimeout(() => {
+      navigate("/coffee-navigation");
+    }, 1000);
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -84,7 +91,7 @@ function CoffeeContent() {
           x: 0,
           scale: 1,
           rotation: 0,
-          duration: 1.2,
+          duration: 0.75,
           ease: "power4.out",
         }
       )
@@ -92,7 +99,7 @@ function CoffeeContent() {
         .to(".coffee-tag", {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.75,
         })
 
       tl.to(".coffee-tag", {
@@ -103,42 +110,42 @@ function CoffeeContent() {
         .to(".coffee-title-line1", {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".coffee-title-line2", {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".coffee-description", {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".feature-1", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".feature-2", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".feature-3", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".feature-4", {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.75,
         })
         .to(".coffee-btn", {
           opacity: 1,
           scale: 1,
-          duration: 1,
+          duration: 0.75,
           ease: "back.out(1.7)",
         });
     }, 100);
@@ -208,7 +215,7 @@ function CoffeeContent() {
               </div>
             </div>
 
-            <button className="coffee-btn">
+            <button className="coffee-btn" onClick={handleOnClick}>
               Explore Coffee
             </button>
           </div>

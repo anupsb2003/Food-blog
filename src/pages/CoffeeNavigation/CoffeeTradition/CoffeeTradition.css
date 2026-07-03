@@ -1,0 +1,444 @@
+/* CoffeeTradition.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN SECTION */
+
+.coffee-tradition-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 70px;
+
+  overflow: hidden;
+}
+
+/* GLASS BACKGROUND CARD */
+
+.coffee-tradition-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 1450px;
+
+  padding: 80px;
+
+  border-radius: 42px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.28),
+    inset 0 1px 1px rgba(255,255,255,0.1);
+
+  overflow: hidden;
+
+  animation: glassReveal 1.2s ease;
+
+  z-index: 5;
+}
+
+/* SOFT INSIDE GLOW */
+
+.coffee-tradition-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 180, 120, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255,255,255,0.05),
+      transparent 35%
+    );
+
+  z-index: -1;
+}
+
+/* GRID */
+
+.coffee-tradition-container {
+  display: grid;
+
+  grid-template-columns: 1fr 520px;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+
+.coffee-tradition-content {
+  animation: slideLeft 1.2s ease;
+}
+
+/* SMALL LABEL */
+
+.coffee-tradition-tag {
+  color: #f2be84;
+
+  font-size: 14px;
+
+  letter-spacing: 6px;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+
+  text-transform: uppercase;
+}
+
+/* HEADING */
+
+.coffee-tradition-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+  line-height: 1.05;
+
+  color: rgba(255,255,255,0.96);
+
+  margin-bottom: 35px;
+
+  text-shadow:
+    0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* PARAGRAPH */
+
+.coffee-tradition-description {
+  font-family: "Inter", sans-serif;
+
+  font-size: 1.12rem;
+
+  line-height: 2;
+
+  color: rgba(255,255,255,0.78);
+
+  margin-bottom: 45px;
+
+  max-width: 700px;
+}
+
+/* LINE */
+
+.coffee-tradition-line {
+  width: 90px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d6a06a,
+      transparent
+    );
+
+  margin-bottom: 30px;
+}
+
+/* QUOTE */
+
+.coffee-tradition-quote {
+  font-size: 1.25rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.7);
+
+  font-style: italic;
+
+  max-width: 600px;
+}
+
+/* IMAGE SIDE */
+
+.coffee-tradition-image-box {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  animation: slideRight 1.2s ease;
+}
+
+/* GLASS EFFECT BEHIND IMAGE */
+
+.coffee-tradition-image-box::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  border-radius: 36px;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(12px);
+
+  z-index: 1;
+}
+
+/* IMAGE */
+
+.coffee-tradition-image {
+  position: relative;
+
+  width: 100%;
+  max-width: 520px;
+
+  border-radius: 36px;
+
+  object-fit: cover;
+
+  z-index: 5;
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.35);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* IMAGE HOVER */
+
+.coffee-tradition-image:hover {
+  transform: scale(1.03) translateY(-10px);
+
+  box-shadow:
+    0 35px 60px rgba(0,0,0,0.4);
+}
+
+/* FLOATING CARD */
+
+.coffee-tradition-floating {
+  position: absolute;
+
+  bottom: 35px;
+  left: -40px;
+
+  padding: 22px 28px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.22);
+
+  z-index: 20;
+
+  animation: floatingCard 5s ease-in-out infinite;
+}
+
+.coffee-tradition-floating h3 {
+  color: white;
+
+  font-size: 1.2rem;
+
+  margin-bottom: 8px;
+}
+
+.coffee-tradition-floating p {
+  color: rgba(255,255,255,0.7);
+
+  line-height: 1.7;
+
+  font-size: 0.95rem;
+}
+
+/* FLOATING LIGHT EFFECTS */
+
+.coffee-light {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.35;
+
+  z-index: 1;
+
+  animation: floatLight 8s ease-in-out infinite;
+}
+
+.light-one {
+  width: 350px;
+  height: 350px;
+
+  background: rgba(255, 180, 120, 0.18);
+
+  top: -100px;
+  left: -100px;
+}
+
+.light-two {
+  width: 400px;
+  height: 400px;
+
+  background: rgba(255,255,255,0.08);
+
+  bottom: -140px;
+  right: -140px;
+
+  animation-delay: 2s;
+}
+
+/* ANIMATIONS */
+
+@keyframes glassReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatLight {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatingCard {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .coffee-tradition-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .coffee-tradition-content {
+    text-align: center;
+  }
+
+  .coffee-tradition-line {
+    margin: 0 auto 30px;
+  }
+
+  .coffee-tradition-description,
+  .coffee-tradition-quote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .coffee-tradition-floating {
+    left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .coffee-tradition-section {
+    padding: 60px 20px;
+  }
+
+  .coffee-tradition-wrapper {
+    padding: 45px 24px;
+  }
+
+  .coffee-tradition-title {
+    font-size: 3rem;
+  }
+
+  .coffee-tradition-description {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .coffee-tradition-quote {
+    font-size: 1.05rem;
+  }
+
+  .coffee-tradition-floating {
+    position: relative;
+
+    left: 0;
+    bottom: 0;
+
+    margin-top: 20px;
+  }
+}

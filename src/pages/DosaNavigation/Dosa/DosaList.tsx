@@ -1,68 +1,65 @@
 import "./DosaList.css";
 import { FaPlay } from "react-icons/fa";
-
+import Dosa from "../../../assets/Dosa.png";
 export default function App() {
   function handleVideo(){
 
   }
   return (
-    <div className="hero-d">
-      {/* Background Blur */}
-      <div className="bg-overlay"></div>
+   <div className="dosa-hero-section">
+  <div className="dosa-bg-overlay"></div>
 
-      {/* Floating Shapes */}
-      <div className="floating floating-1"></div>
-      <div className="floating floating-2"></div>
+  <div className="dosa-floating-shape dosa-floating-shape-one"></div>
+  <div className="dosa-floating-shape dosa-floating-shape-two"></div>
 
-      <div className="container">
-        {/* LEFT CONTENT */}
-        <div className="left-d">
-          <p className="tag">ART OF FERMENTATION</p>
+  <div className="dosa-layout-container">
+    <div className="dosa-left-content">
+      <p className="dosa-tagline">ART OF FERMENTATION</p>
 
-          <h1 className="title-d">
-            The <span>Alchemy</span>
-            <br />
-            of the Dosa
-          </h1>
+      <h1 className="dosa-main-title">
+        The <span className="dosa-title-highlight">Alchemy</span>
+        <br />
+        of the Dosa
+      </h1>
 
-          <p className="description">
-            A golden tapestry of stone-ground rice and silky lentils,
-            fermented for twelve hours and crisped to translucent perfection
-            on ancient cast-iron tawas.
+      <p className="dosa-description-text">
+        A golden tapestry of stone-ground rice and silky lentils...
+      </p>
+
+      <div className="dosa-button-group">
+        <button className="dosa-menu-button">
+          Explore The Menu
+        </button>
+
+        <button className="dosa-ritual-button">
+          <span className="dosa-play-icon-wrapper">
+            <FaPlay />
+          </span>
+          Our Ritual
+        </button>
+      </div>
+    </div>
+
+    <div className="dosa-right-visual">
+      <div className="dosa-image-card-wrapper">
+        <img
+          className="dosa-hero-image"
+          src={Dosa}
+          alt="Dosa"
+        />
+
+        <div className="dosa-floating-info-card">
+          <h3 className="dosa-info-title">
+            The Perfect Crisp
+          </h3>
+
+          <p className="dosa-info-description">
+            Achieved at precisely 220°C...
           </p>
-
-          <div className="buttons">
-            <button className="menu-btn">
-              Explore The Menu
-            </button>
-
-            <button className="ritual-btn" onClick={handleVideo}>
-              <span className="play-icon">
-                <FaPlay />
-              </span>
-              Our Ritual
-            </button>
-          </div>
-        </div>
-
-        {/* RIGHT IMAGE */}
-        <div className="right">
-          <div className="image-card">
-            <img
-              src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=1200&auto=format&fit=crop"
-              alt="Dosa"
-            />
-
-            {/* Floating Card */}
-            <div className="info-card">
-              <h3>The Perfect Crisp</h3>
-              <p>
-                Achieved at precisely 220°C using hand-churned clarified butter.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
   );
 }

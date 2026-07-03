@@ -9,7 +9,6 @@
 }
 
 body {
-  background: #f6f1eb;
   font-family: "Inter", sans-serif;
 }
 
@@ -19,12 +18,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   padding: 80px 60px;
-  background: linear-gradient(
-    135deg,
-    #f6f1eb 0%,
-    #f2ebe4 50%,
-    #f7f3ee 100%
-  );
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* BACKGROUND GLOW */

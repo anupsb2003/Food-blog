@@ -4,9 +4,29 @@ import DosaList from "./Dosa/DosaList"
 import DosaFooter from "./DosaFooter/DosaFooter";
 import FermentationSection from "./FermentationSection/FermentationSection";
 import HolyTrinity from "./HolyTrinity/HolyTrinity";
+import coffeeList from "../../assets/CoffeeList.mp4";
+import "./dosaNavigation.css";
 function DosaNavigation(){
     return (
-        <div>
+        <div className="luxury-dosa-wrapper">
+
+      {/* VIDEO BACKGROUND */}
+      <video
+        className="luxury-dosa-video"
+        autoPlay
+        playsInline
+      >
+        <source
+          src={coffeeList}
+          type="video/mp4"
+        />
+      </video>
+
+      {/* OVERLAY */}
+      <div className="luxury-dosa-overlay"></div>
+
+      {/* SCROLLABLE CONTENT */}
+      <div className="luxury-dosa-scroll-container">
             <DosaNavbar />
             <DosaList />
             <FermentationSection />
@@ -14,6 +34,8 @@ function DosaNavigation(){
             <HolyTrinity />
             <DosaFooter />
         </div>
+
+    </div>
     )
 }
 export default DosaNavigation;
