@@ -1,7 +1,4 @@
 
-import CoffeeScrollAnimation from "./components/CoffeeScrollAnimation/CoffeeScrollAnimation";
-import DosaScrollAnimation from "./components/DosaScrollAnimation/DosaScrollAnimation";
-import SpicesScrollAnimation from "./components/SpicesScrollAnimation/SpicesScrollAnimation";
 import Home from "./pages/Home";
 function App() {
   return (
@@ -13,9 +10,6 @@ function App() {
       }}
     >
       <Home />
-      {/* <DosaScrollAnimation /> */}
-      {/* <CoffeeScrollAnimation /> */}
-      {/* <SpicesScrollAnimation /> */}
     </main>
   );
 }
