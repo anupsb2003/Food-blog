@@ -1,6 +1,6 @@
 // CrunchSection.tsx
 
-import "./crunchSection.css";
+import "./CrunchSection.css";
 
 const crunchData = [
   {

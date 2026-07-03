@@ -1,6 +1,6 @@
 // HolyTrinity.tsx
 
-import "./holyTrinity.css";
+import "./HolyTrinity.css";
 
 const pairings = [
   {
