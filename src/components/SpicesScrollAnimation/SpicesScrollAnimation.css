@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@ body {
   overflow-x: hidden;
   background: #000;
   font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* =========================================
@@ -30,31 +33,37 @@ MAIN CONTAINER
   top: 0;
 
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
-
   overflow: hidden;
 
-  background: #000;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.05),
+      transparent 35%
+    ),
+    #000;
 }
 
 /* =========================================
-IMAGE SIDE (75%)
+IMAGE SIDE
 ========================================= */
 
 .spices-imageSide {
-  margin-top: 150px;
-  width: 74%;
+  width: 72%;
   height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 26px;
+  padding: 32px;
 
-  background: #000;
+  position: relative;
+
+  animation: fadeLeft 1s ease;
 }
 
 /* =========================================
@@ -65,17 +74,45 @@ IMAGE WRAPPER
   position: relative;
 
   width: 100%;
-  height: 92vh;
+  height: 90vh;
 
   overflow: hidden;
 
-  border-radius: 30px;
+  border-radius: 34px;
 
-  background: #000;
+  background: #050505;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   box-shadow:
-    0 30px 100px rgba(0, 0, 0, 0.65),
-    0 0 60px rgba(255, 255, 255, 0.04);
+    0 30px 100px rgba(0, 0, 0, 0.75),
+    0 0 70px rgba(255, 255, 255, 0.04);
+
+  transform: translateZ(0);
+
+  animation: floatImage 7s ease-in-out infinite;
+}
+
+/* =========================================
+IMAGE OVERLAY
+========================================= */
+
+.spices-imageWrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.08)
+    );
+
+  z-index: 2;
+
+  pointer-events: none;
 }
 
 /* =========================================
@@ -93,30 +130,46 @@ IMAGE
 
   user-select: none;
   pointer-events: none;
+
+  transition:
+    transform 1.4s ease,
+    filter 1s ease;
+
+  animation: slowZoom 16s ease-in-out infinite alternate;
+}
+
+.spices-imageWrapper:hover .spices-image {
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 /* =========================================
-CONTENT SIDE (25%)
+CONTENT SIDE
 ========================================= */
 
 .spices-contentSide {
-  width: 25%;
+  width: 28%;
+  min-width: 360px;
   height: 100vh;
 
-  position: sticky;
-  top: 0;
+  position: relative;
 
   display: flex;
   align-items: center;
 
-  padding: 40px;
+  padding: 50px 40px;
 
-  background: #050505;
+  background:
+    rgba(10, 10, 10, 0.72);
 
-  border-left: 1px solid
-    rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
 
   z-index: 10;
+
+  animation: fadeRight 1s ease;
 }
 
 /* =========================================
@@ -125,7 +178,6 @@ CONTENT
 
 .spices-content {
   width: 100%;
-
   color: white;
 }
 
@@ -135,12 +187,25 @@ TAG
 
 .spices-tag {
   display: inline-block;
-  margin-bottom: 22px;
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 3.5px;
+
+  margin-bottom: 24px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
   text-transform: uppercase;
+
   color: #d9a441;
+
+  opacity: 0;
+
+  animation:
+    fadeUp 0.8s ease forwards,
+    pulseTag 3s ease infinite;
+
+  animation-delay: 0.2s;
 }
 
 /* =========================================
@@ -148,13 +213,21 @@ TITLE
 ========================================= */
 
 .spices-title {
-  font-size: clamp(5rem, 5vw, 5rem);
+  font-size: clamp(2.8rem, 5vw, 5rem);
 
-  line-height: 0.95;
+  line-height: 0.92;
 
   font-weight: 800;
 
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+
+  color: #ffffff;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.4s;
 }
 
 /* =========================================
@@ -162,13 +235,19 @@ DESCRIPTION
 ========================================= */
 
 .spices-description {
-  font-size: 20px;
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
 
-  line-height: 2;
+  line-height: 1.9;
 
   color: rgba(255, 255, 255, 0.72);
 
-  margin-bottom: 32px;
+  margin-bottom: 34px;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.6s;
 }
 
 /* =========================================
@@ -179,7 +258,13 @@ BUTTONS
   display: flex;
   flex-direction: column;
 
-  gap: 14px;
+  gap: 16px;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.8s;
 }
 
 /* =========================================
@@ -196,10 +281,44 @@ BUTTON COMMON
 
   border-radius: 999px;
 
-  transition: 0.35s ease;
+  transition: all 0.35s ease;
 
   font-size: 14px;
   font-weight: 600;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =========================================
+BUTTON SHINE
+========================================= */
+
+.spices-buttons button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.25),
+      transparent
+    );
+
+  transition: 0.8s ease;
+}
+
+.spices-buttons button:hover::before {
+  left: 120%;
 }
 
 /* =========================================
@@ -207,17 +326,20 @@ PRIMARY BUTTON
 ========================================= */
 
 .spices-primaryBtn {
-  padding: 15px 22px;
+  padding: 16px 22px;
 
   background: white;
   color: black;
+
+  box-shadow:
+    0 12px 35px rgba(255, 255, 255, 0.12);
 }
 
 .spices-primaryBtn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 
   box-shadow:
-    0 16px 40px rgba(255, 255, 255, 0.14);
+    0 18px 45px rgba(255, 255, 255, 0.18);
 }
 
 /* =========================================
@@ -225,20 +347,19 @@ SECONDARY BUTTON
 ========================================= */
 
 .spices-secondaryBtn {
-  padding: 15px 22px;
+  padding: 16px 22px;
 
   background: rgba(255, 255, 255, 0.08);
 
   color: white;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   backdrop-filter: blur(12px);
 }
 
 .spices-secondaryBtn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 
   background: rgba(255, 255, 255, 0.14);
 }
@@ -261,33 +382,145 @@ NO FRAMES
 }
 
 /* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseTag {
+  0% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* =========================================
+LARGE TABLETS
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .spices-contentSide {
+    min-width: 320px;
+    padding: 40px 30px;
+  }
+
+  .spices-title {
+    font-size: 3.8rem;
+  }
+}
+
+/* =========================================
 TABLET
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 992px) {
+
   .spices-container {
+    position: relative;
     flex-direction: column;
+    height: auto;
   }
 
   .spices-imageSide,
   .spices-contentSide {
     width: 100%;
+    min-width: 100%;
+    height: auto;
   }
 
   .spices-imageSide {
-    height: 58vh;
-  }
-
-  .spices-contentSide {
-    height: auto;
-
-    padding: 40px;
-
-    border-left: none;
+    padding: 24px 24px 10px;
   }
 
   .spices-imageWrapper {
-    height: 52vh;
+    height: 58vh;
+    border-radius: 28px;
+  }
+
+  .spices-contentSide {
+    padding: 40px 30px 60px;
+
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .spices-content {
+    max-width: 760px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .spices-buttons {
+    max-width: 420px;
+    margin: auto;
   }
 }
 
@@ -296,25 +529,105 @@ MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
-  .spices-imageSide {
-    padding: 16px;
+
+  .spices-container {
+    min-height: auto;
   }
 
-  .spices-contentSide {
-    padding: 24px;
+  .spices-imageSide {
+    padding: 16px 16px 8px;
   }
 
   .spices-imageWrapper {
     height: 42vh;
 
-    border-radius: 18px;
+    border-radius: 22px;
+  }
+
+  .spices-contentSide {
+    padding: 34px 22px 50px;
+  }
+
+  .spices-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
   }
 
   .spices-title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
+
+    margin-bottom: 18px;
   }
 
   .spices-description {
-    font-size: 14px;
+    font-size: 0.92rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 26px;
+  }
+
+  .spices-buttons {
+    gap: 12px;
+  }
+
+  .spices-buttons button {
+    padding: 15px 18px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .spices-imageSide {
+    padding: 12px 12px 6px;
+  }
+
+  .spices-imageWrapper {
+    height: 36vh;
+
+    border-radius: 18px;
+  }
+
+  .spices-contentSide {
+    padding: 28px 18px 42px;
+  }
+
+  .spices-title {
+    font-size: 2.2rem;
+  }
+
+  .spices-description {
+    font-size: 0.88rem;
+  }
+
+  .spices-buttons button {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+}
+
+/* =========================================
+ULTRA WIDE
+========================================= */
+
+@media (min-width: 1600px) {
+
+  .spices-container {
+    max-width: 1800px;
+    margin: auto;
+  }
+
+  .spices-contentSide {
+    padding: 60px;
+  }
+
+  .spices-description {
+    font-size: 1.2rem;
   }
 }

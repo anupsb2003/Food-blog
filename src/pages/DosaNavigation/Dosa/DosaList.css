@@ -8,15 +8,16 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: #f7f2e9;
+  background: transparent;
   overflow-x: hidden;
+  color: #ffffff;
 }
 
 /* HERO SECTION */
 .dosa-hero-section {
   position: relative;
   min-height: 100vh;
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,12 +25,15 @@ body {
   padding: 60px;
 }
 
-/* BACKGROUND BLUR */
+/* GLASS OVERLAY */
 .dosa-bg-overlay {
   position: absolute;
   width: 900px;
   height: 900px;
-  background: radial-gradient(circle, #d8b46b50 0%, transparent 70%);
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.02) 60%,
+      transparent 80%);
   filter: blur(100px);
   animation: dosaPulse 8s ease-in-out infinite;
 }
@@ -38,8 +42,10 @@ body {
 .dosa-floating-shape {
   position: absolute;
   border-radius: 50%;
-  background: rgba(194, 148, 63, 0.12);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dosa-floating-shape-one {
@@ -51,10 +57,10 @@ body {
 }
 
 .dosa-floating-shape-two {
-  width: 200px;
-  height: 200px;
-  bottom: -40px;
-  left: -40px;
+  width: 220px;
+  height: 220px;
+  bottom: -50px;
+  left: -50px;
   animation: dosaFloatReverse 10s ease-in-out infinite;
 }
 
@@ -66,7 +72,7 @@ body {
   max-width: 1300px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 70px;
   align-items: center;
 }
 
@@ -77,60 +83,67 @@ body {
 
 .dosa-tagline {
   letter-spacing: 5px;
-  color: #8d6500;
+  color: rgba(255, 255, 255, 0.75);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .dosa-main-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 5rem;
   line-height: 0.95;
-  color: #1d140d;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
 .dosa-title-highlight {
   font-style: italic;
   font-weight: 500;
-  color: #4a2c12;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .dosa-description-text {
   max-width: 560px;
-  color: #5f554b;
-  line-height: 1.8;
-  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.9;
+  font-size: 1.1rem;
   margin-bottom: 45px;
 }
 
-/* BUTTONS */
+/* BUTTON GROUP */
 .dosa-button-group {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
+/* PRIMARY BUTTON */
 .dosa-menu-button {
   padding: 18px 34px;
-  border: none;
-  background: linear-gradient(135deg, #8a6200, #b8840f);
-  color: white;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 14px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.4s ease;
-  box-shadow: 0 10px 30px rgba(167, 122, 18, 0.25);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
 }
 
 .dosa-menu-button:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(167, 122, 18, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.28);
 }
 
+/* SECONDARY BUTTON */
 .dosa-ritual-button {
   display: flex;
   align-items: center;
@@ -139,7 +152,7 @@ body {
   border: none;
   cursor: pointer;
   font-weight: 600;
-  color: #2f2419;
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -148,19 +161,20 @@ body {
   width: 58px;
   height: 58px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transition: all 0.4s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
 }
 
 .dosa-ritual-button:hover .dosa-play-icon-wrapper {
   transform: scale(1.08) rotate(6deg);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* RIGHT IMAGE */
@@ -178,9 +192,10 @@ body {
 
 .dosa-hero-image {
   width: 100%;
-  border-radius: 28px;
+  border-radius: 30px;
   object-fit: cover;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
   transition: transform 0.6s ease;
 }
 
@@ -188,31 +203,33 @@ body {
   transform: scale(1.03);
 }
 
-/* INFO CARD */
+/* FLOATING CARD */
 .dosa-floating-info-card {
   position: absolute;
   bottom: -40px;
   right: -40px;
   width: 280px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px);
   padding: 28px;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
   animation: dosaFloatCard 5s ease-in-out infinite;
 }
 
 .dosa-info-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
-  color: #7b5500;
+  color: #ffffff;
   margin-bottom: 10px;
   font-style: italic;
 }
 
 .dosa-info-description {
-  color: #4e463d;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
 }
 
 /* ANIMATIONS */
@@ -271,7 +288,7 @@ body {
 @keyframes dosaPulse {
   0% {
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   50% {
@@ -281,7 +298,7 @@ body {
 
   100% {
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
@@ -299,11 +316,14 @@ body {
   }
 }
 
-/* RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
 @media (max-width: 992px) {
   .dosa-layout-container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 60px;
   }
 
   .dosa-left-content {
@@ -316,6 +336,14 @@ body {
     font-size: 4rem;
   }
 
+  .dosa-description-text {
+    max-width: 700px;
+  }
+
+  .dosa-button-group {
+    justify-content: center;
+  }
+
   .dosa-floating-info-card {
     right: 50%;
     transform: translateX(50%);
@@ -323,30 +351,76 @@ body {
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 600px) {
   .dosa-hero-section {
-    padding: 30px 20px;
+    padding: 100px 20px 60px;
+    min-height: auto;
+  }
+
+  .dosa-layout-container {
+    gap: 50px;
   }
 
   .dosa-main-title {
     font-size: 3rem;
+    line-height: 1;
+  }
+
+  .dosa-tagline {
+    font-size: 12px;
+    letter-spacing: 3px;
   }
 
   .dosa-description-text {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
   }
 
   .dosa-button-group {
     flex-direction: column;
+    width: 100%;
   }
 
   .dosa-menu-button {
     width: 100%;
   }
 
+  .dosa-ritual-button {
+    justify-content: center;
+  }
+
+  .dosa-image-card-wrapper {
+    max-width: 100%;
+  }
+
+  .dosa-hero-image {
+    border-radius: 24px;
+  }
+
   .dosa-floating-info-card {
-    width: 90%;
-    right: 5%;
+    position: relative;
+    width: 100%;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
     transform: none;
+  }
+
+  .dosa-bg-overlay {
+    width: 500px;
+    height: 500px;
+  }
+
+  .dosa-floating-shape-one {
+    width: 180px;
+    height: 180px;
+  }
+
+  .dosa-floating-shape-two {
+    width: 140px;
+    height: 140px;
   }
 }

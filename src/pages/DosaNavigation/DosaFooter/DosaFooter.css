@@ -1,5 +1,3 @@
-/* dosaFooter.css */
-
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 * {
@@ -9,95 +7,117 @@
 }
 
 body {
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   font-family: "Inter", sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .dosa-footer {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 70px 50px 35px;
+  background: transparent;
+  padding: 90px 70px 35px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-/* GLOW EFFECT */
+/* =========================
+   GLOW EFFECT
+========================= */
 
 .footer-glow {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(
     circle,
-    rgba(193, 144, 38, 0.12) 0%,
-    transparent 70%
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 45%,
+    transparent 75%
   );
   top: -180px;
   right: -120px;
   filter: blur(100px);
   animation: pulseGlow 7s ease infinite;
+  pointer-events: none;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 
 .footer-container {
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  align-items: flex-start;
+  gap: 90px;
   margin-bottom: 70px;
 }
 
-/* BRAND */
+/* =========================
+   BRAND
+========================= */
 
 .footer-brand {
-  max-width: 450px;
+  max-width: 470px;
   animation: fadeUp 1s ease;
 }
 
 .footer-brand h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
-  color: #8d6200;
-  margin-bottom: 25px;
+  font-size: 3.3rem;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1;
 }
 
 .footer-brand p {
-  color: #5c5248;
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.9;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+========================= */
 
 .footer-links {
   display: flex;
-  gap: 70px;
+  gap: 80px;
   animation: fadeUp 1.2s ease;
+  flex-wrap: wrap;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
+  min-width: 150px;
 }
 
 .footer-column h3 {
-  color: #8d6200;
+  color: rgba(255, 255, 255, 0.88);
   letter-spacing: 4px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 28px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .footer-column a {
   text-decoration: none;
-  color: #4d4339;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 18px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.35s ease;
   position: relative;
+  width: fit-content;
 }
 
 .footer-column a::after {
@@ -107,12 +127,12 @@ body {
   height: 1px;
   left: 0;
   bottom: -4px;
-  background: #8d6200;
-  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.35s ease;
 }
 
 .footer-column a:hover {
-  color: #8d6200;
+  color: #ffffff;
   transform: translateX(5px);
 }
 
@@ -120,23 +140,28 @@ body {
   width: 100%;
 }
 
-/* NEWSLETTER */
+/* =========================
+   NEWSLETTER
+========================= */
 
 .newsletter-box {
   display: flex;
   align-items: center;
-  border: 1px solid rgba(141, 98, 0, 0.2);
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
   height: 62px;
-  width: 290px;
+  width: 320px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
 }
 
 .newsletter-box:hover {
-  border-color: rgba(141, 98, 0, 0.5);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .newsletter-box input {
@@ -145,12 +170,12 @@ body {
   outline: none;
   background: transparent;
   padding: 0 18px;
-  font-size: 1rem;
-  color: #c7b8aa;
+  font-size: 0.98rem;
+  color: #ffffff;
 }
 
 .newsletter-box input::placeholder {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .newsletter-box button {
@@ -159,25 +184,30 @@ body {
   border: none;
   background: transparent;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .newsletter-box button:hover {
-  background: rgba(141, 98, 0, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* DIVIDER */
+/* =========================
+   DIVIDER
+========================= */
 
 .footer-divider {
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.08);
   margin-bottom: 30px;
 }
 
-/* BOTTOM */
+/* =========================
+   BOTTOM
+========================= */
+
 .footer-bottom-d {
   display: flex;
   justify-content: center;
@@ -185,22 +215,27 @@ body {
   gap: 20px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .footer-bottom-d p {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.62);
   letter-spacing: 2px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(35px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -210,7 +245,7 @@ body {
 @keyframes pulseGlow {
   0% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.45;
   }
 
   50% {
@@ -220,13 +255,19 @@ body {
 
   100% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.45;
   }
 }
 
-/* RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1000px) {
+
+  .dosa-footer {
+    padding: 70px 40px 35px;
+  }
 
   .footer-container {
     flex-direction: column;
@@ -234,41 +275,127 @@ body {
   }
 
   .footer-links {
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .dosa-footer {
-    padding: 60px 25px 30px;
-  }
-
-  .footer-brand h1 {
-    font-size: 2.4rem;
-  }
-
-  .footer-brand p {
-    font-size: 1rem;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 40px;
+    gap: 55px;
   }
 
   .newsletter-box {
     width: 100%;
+    max-width: 380px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .dosa-footer {
+    padding: 60px 22px 30px;
   }
 
-  .footer-bottom-d{
+  .footer-container {
+    gap: 55px;
+    margin-bottom: 55px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-brand h1 {
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+  }
+
+  .footer-brand p {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  .footer-links {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 38px;
+    width: 100%;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .footer-column a {
+    font-size: 0.96rem;
+    margin-bottom: 15px;
+  }
+
+  .newsletter-box {
+    width: 100%;
+    height: 58px;
+    border-radius: 16px;
+  }
+
+  .newsletter-box input {
+    font-size: 0.92rem;
+  }
+
+  .newsletter-box button {
+    width: 58px;
+  }
+
+  .footer-bottom-d {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
   }
 
   .footer-bottom-d p {
-    font-size: 0.75rem;
-    line-height: 1.6;
+    font-size: 0.72rem;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+  }
+
+  .footer-glow {
+    width: 320px;
+    height: 320px;
+    top: -100px;
+    right: -120px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .dosa-footer {
+    padding: 55px 18px 25px;
+  }
+
+  .footer-brand h1 {
+    font-size: 2.1rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.92rem;
+  }
+
+  .footer-column a {
+    font-size: 0.92rem;
+  }
+
+  .newsletter-box {
+    height: 54px;
+  }
+
+  .footer-bottom-d p {
+    font-size: 0.68rem;
   }
 }

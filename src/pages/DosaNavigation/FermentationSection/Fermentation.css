@@ -1,5 +1,3 @@
-/* fermentation.css */
-
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 * {
@@ -10,30 +8,48 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background: transparent;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
+
 .fermentation-section {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  padding: 80px 60px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 90px 70px;
+  background: transparent;
 }
 
-/* BACKGROUND GLOW */
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
 .bg-glow {
   position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #d2a04230 0%, transparent 70%);
-  top: -200px;
-  right: -100px;
-  filter: blur(100px);
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 45%,
+    transparent 75%
+  );
+  top: -220px;
+  right: -120px;
+  filter: blur(110px);
   animation: pulseGlow 8s ease infinite;
+  pointer-events: none;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
+
 .fermentation-container {
   position: relative;
   z-index: 2;
@@ -42,39 +58,46 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 60px;
+  gap: 70px;
 }
 
-/* LEFT */
+/* =========================
+   LEFT
+========================= */
+
 .fermentation-left {
   animation: fadeUp 1s ease forwards;
 }
 
 .ritual-tag {
   letter-spacing: 5px;
-  color: #9b6b00;
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
   font-weight: 700;
   margin-bottom: 22px;
+  text-transform: uppercase;
 }
 
 .fermentation-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 5rem;
-  line-height: 1;
-  color: #1d140d;
+  line-height: 0.98;
+  color: #ffffff;
   margin-bottom: 32px;
 }
 
 .fermentation-description {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #5c5248;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
   max-width: 650px;
   margin-bottom: 50px;
 }
 
-/* FEATURES */
+/* =========================
+   FEATURES
+========================= */
+
 .feature-list {
   display: flex;
   flex-direction: column;
@@ -92,43 +115,51 @@ body {
   transform: translateX(10px);
 }
 
+/* ICON */
+
 .feature-icon {
-  min-width: 60px;
-  height: 60px;
+  min-width: 62px;
+  height: 62px;
   border-radius: 18px;
-  background: linear-gradient(
-    135deg,
-    #f0d9a3,
-    #f7e5bf
-  );
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8f6200;
+  color: #ffffff;
   font-size: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .feature-item h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-  color: #23170d;
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .feature-item p {
-  color: #5d5349;
-  line-height: 1.7;
-  font-size: 1.08rem;
-  max-width: 500px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.8;
+  font-size: 1rem;
+  max-width: 520px;
 }
 
-/* RIGHT */
+/* =========================
+   RIGHT
+========================= */
+
 .fermentation-right {
   display: flex;
   justify-content: center;
   animation: fadeRight 1.2s ease forwards;
 }
+
+/* =========================
+   IMAGE GRID
+========================= */
 
 .image-grid {
   position: relative;
@@ -140,9 +171,12 @@ body {
 
 .image-grid div {
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 28px;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .image-grid img {
@@ -156,7 +190,10 @@ body {
   transform: scale(1.08);
 }
 
-/* IMAGE POSITIONS */
+/* =========================
+   IMAGE POSITIONS
+========================= */
+
 .top-image {
   animation: float1 6s ease-in-out infinite;
 }
@@ -172,13 +209,16 @@ body {
   animation: float3 8s ease-in-out infinite;
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(70px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -190,6 +230,7 @@ body {
     opacity: 0;
     transform: translateX(70px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -200,9 +241,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-12px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -212,9 +255,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(14px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -224,9 +269,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-18px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -235,21 +282,30 @@ body {
 @keyframes pulseGlow {
   0% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.45;
   }
+
   50% {
     transform: scale(1.08);
-    opacity: 0.8;
+    opacity: 0.75;
   }
+
   100% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.45;
   }
 }
 
-/* RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1100px) {
+
+  .fermentation-section {
+    padding: 80px 40px;
+  }
+
   .fermentation-container {
     grid-template-columns: 1fr;
     gap: 80px;
@@ -259,9 +315,18 @@ body {
     text-align: center;
   }
 
+  .fermentation-description {
+    margin-inline: auto;
+  }
+
+  .feature-list {
+    align-items: center;
+  }
+
   .feature-item {
     justify-content: center;
     text-align: left;
+    max-width: 650px;
   }
 
   .image-grid {
@@ -269,38 +334,127 @@ body {
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
 
   .fermentation-section {
-    padding: 60px 25px;
+    padding: 65px 22px;
+    min-height: auto;
+  }
+
+  .fermentation-container {
+    gap: 60px;
+  }
+
+  .ritual-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
   }
 
   .fermentation-title {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-bottom: 24px;
   }
 
   .fermentation-description {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
   }
 
-  .image-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .side-image {
-    grid-row: auto;
-    height: 320px;
-    margin-top: 0;
-  }
-
-  .image-grid div {
-    height: 280px;
+  .feature-list {
+    gap: 30px;
   }
 
   .feature-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 18px;
+  }
+
+  .feature-item:hover {
+    transform: none;
+  }
+
+  .feature-icon {
+    min-width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    font-size: 22px;
+  }
+
+  .feature-item h3 {
+    font-size: 1.9rem;
+  }
+
+  .feature-item p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .image-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 18px;
+  }
+
+  .image-grid div {
+    width: 100%;
+    height: 280px;
+    border-radius: 24px;
+  }
+
+  .side-image {
+    grid-row: auto;
+    height: 300px;
+    margin-top: 0;
+  }
+
+  .bg-glow {
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    right: -180px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .fermentation-section {
+    padding: 55px 18px;
+  }
+
+  .fermentation-title {
+    font-size: 2.6rem;
+  }
+
+  .fermentation-description {
+    font-size: 0.92rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.7rem;
+  }
+
+  .feature-item p {
+    font-size: 0.9rem;
+  }
+
+  .image-grid div {
+    height: 240px;
+  }
+
+  .side-image {
+    height: 260px;
   }
 }

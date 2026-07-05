@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@ body {
   overflow-x: hidden;
   background: #000;
   font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* =======================================
@@ -34,7 +37,13 @@ body {
 
   overflow: hidden;
 
-  background: #000;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.04),
+      transparent 30%
+    ),
+    #000;
 }
 
 /* =======================================
@@ -47,8 +56,44 @@ body {
   position: absolute;
   inset: 0;
 
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.4) 38%,
+      rgba(0, 0, 0, 0.08) 100%
+    );
 
   z-index: 2;
+}
+
+/* =======================================
+   EXTRA GLOW
+======================================= */
+
+.sticky-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  top: -220px;
+  right: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 70%
+    );
+
+  filter: blur(100px);
+
+  animation: glowPulse 7s ease infinite;
+
+  z-index: 1;
 }
 
 /* =======================================
@@ -64,13 +109,16 @@ body {
 
   object-fit: cover;
 
-  /* Move dosa slightly right */
   object-position: 68% center;
 
   user-select: none;
   pointer-events: none;
 
   z-index: 1;
+
+  transform: scale(1.03);
+
+  animation: imageZoom 14s ease-in-out infinite alternate;
 }
 
 /* =======================================
@@ -85,8 +133,8 @@ body {
 
   transform: translateY(-50%);
 
-  width: 40%;
-  max-width: 560px;
+  width: 42%;
+  max-width: 580px;
 
   z-index: 5;
 
@@ -107,8 +155,17 @@ body {
 
   color: #d8b15d;
 
+  letter-spacing: 4px;
 
-  opacity: 0.95;
+  margin-bottom: 22px;
+
+  opacity: 0;
+
+  animation:
+    fadeUp 0.9s ease forwards,
+    glowText 4s ease infinite;
+
+  animation-delay: 0.2s;
 }
 
 /* =======================================
@@ -119,17 +176,26 @@ body {
   display: flex;
   flex-direction: column;
 
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 5vw, 5.4rem);
 
   line-height: 0.88;
 
   font-weight: 800;
 
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.4s;
 }
 
 .dosa-line {
   display: block;
+
+  text-shadow:
+    0 10px 30px rgba(0,0,0,0.45);
 }
 
 /* =======================================
@@ -137,15 +203,21 @@ body {
 ======================================= */
 
 .dosa-description {
-  max-width: 470px;
+  max-width: 500px;
 
-  font-size: 18px;
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
 
-  line-height: 1.8;
+  line-height: 1.9;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.78);
 
-  margin-bottom: 42px;
+  margin-bottom: 40px;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.6s;
 }
 
 /* =======================================
@@ -158,6 +230,12 @@ body {
   gap: 18px;
 
   pointer-events: auto;
+
+  opacity: 0;
+
+  animation: fadeUp 1s ease forwards;
+
+  animation-delay: 0.8s;
 }
 
 .dosa-buttons button {
@@ -168,11 +246,45 @@ body {
 
   border-radius: 999px;
 
-  font-size: 15px;
+  font-size: 14px;
 
   font-weight: 600;
 
-  transition: 0.35s;
+  transition: all 0.35s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =======================================
+   BUTTON SHINE
+======================================= */
+
+.dosa-buttons button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.3),
+      transparent
+    );
+
+  transition: 0.8s ease;
+}
+
+.dosa-buttons button:hover::before {
+  left: 120%;
 }
 
 /* =======================================
@@ -185,12 +297,16 @@ body {
   color: #000;
 
   padding: 16px 34px;
+
+  box-shadow:
+    0 14px 35px rgba(255,255,255,0.12);
 }
 
 .dosa-primary:hover {
   transform: translateY(-4px);
 
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 20px 45px rgba(255,255,255,0.18);
 }
 
 /* =======================================
@@ -204,13 +320,14 @@ body {
 
   background: rgba(255, 255, 255, 0.08);
 
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .dosa-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.14);
 
   transform: translateY(-4px);
 }
@@ -233,20 +350,74 @@ body {
 }
 
 /* =======================================
-   TABLET
+   ANIMATIONS
 ======================================= */
 
-@media (max-width: 1024px) {
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageZoom {
+  0% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes glowText {
+  0% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* =======================================
+   LARGE TABLETS
+======================================= */
+
+@media (max-width: 1200px) {
+
   .dosa-content {
     width: 48%;
   }
 
   .dosa-title {
-    font-size: clamp(3rem, 7vw, 5rem);
-  }
-
-  .dosa-description {
-    font-size: 17px;
+    font-size: 4.2rem;
   }
 
   .dosa-image {
@@ -255,68 +426,180 @@ body {
 }
 
 /* =======================================
+   TABLET
+======================================= */
+
+@media (max-width: 992px) {
+
+  .sticky-container::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0.18) 0%,
+        rgba(0,0,0,0.45) 45%,
+        rgba(0,0,0,0.82) 100%
+      );
+  }
+
+  .dosa-content {
+    width: calc(100% - 80px);
+
+    max-width: 720px;
+
+    left: 40px;
+    right: 40px;
+
+    top: auto;
+    bottom: 70px;
+
+    transform: none;
+  }
+
+  .dosa-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .dosa-description {
+    max-width: 640px;
+  }
+
+  .dosa-image {
+    object-position: center;
+  }
+}
+
+/* =======================================
    MOBILE
 ======================================= */
 
 @media (max-width: 768px) {
+
   .sticky-container {
-    height: 100vh;
+    height: 100svh;
   }
 
   .sticky-container::before {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.35) 30%,
-      rgba(0, 0, 0, 0.78) 100%
-    );
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.12) 0%,
+        rgba(0, 0, 0, 0.42) 38%,
+        rgba(0, 0, 0, 0.88) 100%
+      );
   }
 
   .dosa-image {
-    object-position: 72% center;
+    object-position: 64% center;
   }
 
   .dosa-content {
-    left: 24px;
-    right: 24px;
+    left: 22px;
+    right: 22px;
 
-    width: calc(100% - 48px);
+    width: calc(100% - 44px);
 
-    top: auto;
-    bottom: 80px;
-
-    transform: none;
-
-    max-width: 100%;
+    bottom: 48px;
   }
 
   .dosa-tag {
     font-size: 11px;
 
     letter-spacing: 3px;
+
+    margin-bottom: 16px;
   }
 
   .dosa-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
 
     line-height: 0.95;
+
+    margin-bottom: 18px;
   }
 
   .dosa-description {
     max-width: 100%;
 
-    font-size: 15px;
+    font-size: 0.92rem;
 
-    line-height: 1.6;
+    line-height: 1.75;
+
+    margin-bottom: 28px;
   }
 
   .dosa-buttons {
     flex-direction: column;
 
     width: 100%;
+
+    gap: 12px;
   }
 
   .dosa-buttons button {
-    width: fit-content;
+    width: 100%;
+
+    font-size: 13px;
+
+    padding: 15px 18px;
+  }
+
+  .sticky-container::after {
+    width: 340px;
+    height: 340px;
+
+    top: -80px;
+    right: -100px;
+  }
+}
+
+/* =======================================
+   SMALL MOBILE
+======================================= */
+
+@media (max-width: 480px) {
+
+  .dosa-content {
+    left: 18px;
+    right: 18px;
+
+    width: calc(100% - 36px);
+
+    bottom: 36px;
+  }
+
+  .dosa-title {
+    font-size: 2.2rem;
+  }
+
+  .dosa-description {
+    font-size: 0.88rem;
+  }
+
+  .dosa-buttons button {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+
+  .dosa-image {
+    object-position: 66% center;
+  }
+}
+
+/* =======================================
+   ULTRA WIDE
+======================================= */
+
+@media (min-width: 1600px) {
+
+  .dosa-content {
+    max-width: 700px;
+  }
+
+  .dosa-title {
+    font-size: 6rem;
+  }
+
+  .dosa-description {
+    font-size: 1.2rem;
   }
 }

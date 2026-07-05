@@ -2,219 +2,433 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: "Inter", sans-serif;
+body{
+    font-family:"Inter",sans-serif;
 }
 
-/* SECTION */
-.crunch-section {
-  position: relative;
-  min-height: 100vh;
-  padding: 100px 60px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
+/* ==========================================
+SECTION
+========================================== */
+
+.crunch-section{
+    position:relative;
+
+    min-height:100vh;
+
+    padding:120px 6vw;
+
+    overflow:hidden;
+
+    background:transparent;
 }
 
-/* GLOW EFFECT */
-.crunch-glow {
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.08);
-  top: -250px;
-  left: -200px;
-  animation: pulseGlow 8s ease infinite;
+/* ==========================================
+GLOW
+========================================== */
+
+.crunch-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    top:-250px;
+    left:-220px;
+
+    background:radial-gradient(
+    circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
+
+    filter:blur(40px);
+
+    animation:pulseGlow 8s ease infinite;
 }
 
-/* HEADER */
-.crunch-header {
-  text-align: center;
-  margin-bottom: 90px;
-  position: relative;
-  z-index: 2;
+/* ==========================================
+HEADER
+========================================== */
+
+.crunch-header{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    margin-bottom:80px;
 }
 
-.crunch-tag {
-  color: #946b00;
-  letter-spacing: 6px;
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.crunch-tag{
+
+    color:#f6d58d;
+
+    letter-spacing:6px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    text-transform:uppercase;
 }
 
-.crunch-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 5rem;
-  color: #1d140d;
-  margin-bottom: 25px;
-  animation: fadeDown 1s ease;
+.crunch-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(2.6rem,6vw,5rem);
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+    animation:fadeDown 1s ease;
 }
 
-.title-line {
-  width: 100px;
-  height: 5px;
-  background: linear-gradient(
+.title-line{
+
+    width:110px;
+    height:4px;
+
+    margin:auto;
+
+    border-radius:30px;
+
+    background:linear-gradient(
     90deg,
-    #8b5f00,
-    #d3a13c
-  );
-  margin: auto;
-  border-radius: 20px;
-  animation: widthGrow 1.5s ease;
+    #d7a95b,
+    #fff0c4);
+
+    animation:widthGrow 1.4s ease;
 }
 
-/* GRID */
-.crunch-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+/* ==========================================
+GRID
+========================================== */
+
+.crunch-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
 }
 
-/* CARD */
-.crunch-card {
-  position: relative;
-  padding: 55px 48px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(14px);
-  overflow: hidden;
-  transition: all 0.45s ease;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  min-height: 420px;
+/* ==========================================
+CARD
+========================================== */
+
+.crunch-card{
+
+    position:relative;
+
+    padding:50px 40px;
+
+    border-radius:28px;
+
+    min-height:380px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.22);
+
+    transition:.45s;
 }
 
-.crunch-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
+.crunch-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
     180deg,
-    transparent,
-    rgba(255, 255, 255, 0.25)
-  );
-  opacity: 0;
-  transition: 0.4s ease;
+    rgba(255,255,255,.12),
+    transparent 70%);
+
+    opacity:0;
+
+    transition:.4s;
 }
 
-.crunch-card:hover::before {
-  opacity: 1;
+.crunch-card:hover{
+
+    transform:translateY(-12px);
+
+    background:rgba(255,255,255,.10);
+
+    border-color:rgba(255,255,255,.20);
+
+    box-shadow:
+    0 28px 60px rgba(0,0,0,.35);
 }
 
-.crunch-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+.crunch-card:hover::before{
+
+    opacity:1;
 }
 
-/* NUMBER */
-.card-number {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 5rem;
-  font-style: italic;
-  color: rgba(188, 160, 119, 0.35);
-  margin-bottom: 25px;
-  transition: 0.4s ease;
+/* ==========================================
+NUMBER
+========================================== */
+
+.card-number{
+
+    display:block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:4.8rem;
+
+    font-style:italic;
+
+    color:rgba(255,255,255,.18);
+
+    margin-bottom:20px;
+
+    transition:.4s;
 }
 
-.crunch-card:hover .card-number {
-  transform: translateX(8px);
-  color: rgba(188, 160, 119, 0.5);
+.crunch-card:hover .card-number{
+
+    color:rgba(255,255,255,.35);
+
+    transform:translateX(8px);
 }
 
-/* TITLE */
-.crunch-card h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.4rem;
-  color: #24180f;
-  margin-bottom: 22px;
-  line-height: 1.1;
+/* ==========================================
+TITLE
+========================================== */
+
+.crunch-card h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2.2rem;
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+    line-height:1.15;
 }
 
-/* DESCRIPTION */
-.crunch-card p {
-  color: #5c5248;
-  font-size: 1.15rem;
-  line-height: 1.9;
+/* ==========================================
+DESCRIPTION
+========================================== */
+
+.crunch-card p{
+
+    color:rgba(255,255,255,.82);
+
+    font-size:1.05rem;
+
+    line-height:1.9;
 }
 
-/* ANIMATIONS */
+/* ==========================================
+ANIMATIONS
+========================================== */
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
-@keyframes widthGrow {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 100px;
-    opacity: 1;
-  }
+@keyframes widthGrow{
+
+    from{
+
+        width:0;
+        opacity:0;
+    }
+
+    to{
+
+        width:110px;
+        opacity:1;
+    }
+
 }
 
-@keyframes pulseGlow {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
+@keyframes pulseGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+        opacity:.4;
+    }
+
+    50%{
+
+        transform:scale(1.08);
+        opacity:.8;
+    }
+
 }
 
-/* RESPONSIVE */
+/* ==========================================
+TABLET
+========================================== */
 
-@media (max-width: 1100px) {
-  .crunch-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:1100px){
 
-  .crunch-card {
-    min-height: auto;
-  }
+    .crunch-section{
+
+        padding:90px 5vw;
+    }
+
+    .crunch-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:24px;
+    }
+
+    .crunch-card{
+
+        min-height:340px;
+
+        padding:40px 32px;
+    }
+
 }
 
-@media (max-width: 768px) {
-  .crunch-section {
-    padding: 70px 25px;
-  }
+/* ==========================================
+MOBILE
+========================================== */
 
-  .crunch-title {
-    font-size: 3.4rem;
-  }
+@media(max-width:768px){
 
-  .crunch-card {
-    padding: 40px 30px;
-  }
+    .crunch-section{
 
-  .crunch-card h2 {
-    font-size: 2rem;
-  }
+        padding:70px 20px;
+    }
 
-  .card-number {
-    font-size: 4rem;
-  }
+    .crunch-header{
+
+        margin-bottom:50px;
+    }
+
+    .crunch-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .crunch-card{
+
+        min-height:auto;
+
+        padding:30px 24px;
+
+        border-radius:22px;
+    }
+
+    .crunch-title{
+
+        font-size:2.4rem;
+    }
+
+    .crunch-tag{
+
+        font-size:13px;
+
+        letter-spacing:3px;
+    }
+
+    .card-number{
+
+        font-size:3.5rem;
+
+        margin-bottom:14px;
+    }
+
+    .crunch-card h2{
+
+        font-size:1.8rem;
+    }
+
+    .crunch-card p{
+
+        font-size:0.95rem;
+
+        line-height:1.7;
+    }
+
+}
+
+/* ==========================================
+SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+    .crunch-section{
+
+        padding:60px 16px;
+    }
+
+    .crunch-title{
+
+        font-size:2rem;
+    }
+
+    .crunch-card{
+
+        padding:24px 20px;
+    }
+
+    .crunch-card h2{
+
+        font-size:1.55rem;
+    }
+
+    .card-number{
+
+        font-size:3rem;
+    }
+
+    .crunch-card p{
+
+        font-size:.9rem;
+    }
+
 }

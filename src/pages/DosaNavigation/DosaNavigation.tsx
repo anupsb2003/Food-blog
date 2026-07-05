@@ -4,7 +4,7 @@ import DosaList from "./Dosa/DosaList"
 import DosaFooter from "./DosaFooter/DosaFooter";
 import FermentationSection from "./FermentationSection/FermentationSection";
 import HolyTrinity from "./HolyTrinity/HolyTrinity";
-import coffeeList from "../../assets/CoffeeList.mp4";
+import dosaList from "../../assets/dosaList.mp4";
 import "./dosaNavigation.css";
 function DosaNavigation(){
     return (
@@ -17,7 +17,7 @@ function DosaNavigation(){
         playsInline
       >
         <source
-          src={coffeeList}
+          src={dosaList}
           type="video/mp4"
         />
       </video>
