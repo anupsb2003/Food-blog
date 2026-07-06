@@ -1,209 +1,153 @@
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FaInstagram,
-  FaFacebookF,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-
 import "./Footer.css";
 
-gsap.registerPlugin(ScrollTrigger);
+import {
+  RiInstagramLine,
+  RiLinkedinBoxLine,
+  RiPinterestLine,
+  RiArrowRightUpLine,
+  RiFlaskLine,
+} from "react-icons/ri";
 
-function Footer() {
-
-  useEffect(() => {
-
-    gsap.fromTo(
-      ".footer-title",
-      {
-        y: 200,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: ".social-banner",
-          start: "top bottom",
-          end: "center center",
-          scrub: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".footer-left",
-      {
-        x: -200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: ".footer-main",
-          start: "top bottom",
-          end: "center center",
-          scrub: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".footer-contact",
-      {
-        y: 150,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: ".footer-main",
-          start: "top bottom",
-          end: "center center",
-          scrub: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".footer-newsletter",
-      {
-        x: 200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: ".footer-main",
-          start: "top bottom",
-          end: "center center",
-          scrub: true,
-        },
-      }
-    );
-
-    gsap.to(".footer-title", {
-      y: -150,
-
-      scrollTrigger: {
-        trigger: ".social-banner",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".social-icons", {
-      y: -80,
-
-      scrollTrigger: {
-        trigger: ".footer-main",
-        start: "top bottom",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-
-    gsap.fromTo(
-      ".footer-main",
-      {
-        scale: 0.9,
-      },
-      {
-        scale: 1,
-
-        scrollTrigger: {
-          trigger: ".footer-main",
-          start: "top 90%",
-          end: "top 30%",
-          scrub: true,
-        },
-      }
-    );
-
-  }, []);
-
+export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="food-footer">
 
-      <section className="social-banner">
-        <h1 className="footer-title">
-          Follow Us On
-          <br />
-          Social
-        </h1>
-      </section>
+      {/* BACKGROUND */}
 
-      <section className="footer-main">
+      <div className="footer-grid"></div>
 
-        <div className="footer-left">
+      <div className="footer-glow glow-left"></div>
+      <div className="footer-glow glow-right"></div>
+
+      {/* TOP */}
+
+      <div className="footer-top">
+
+        {/* BRAND */}
+
+        <div className="footer-brand">
+
+          <div className="brand-badge">
+
+            <RiFlaskLine />
+
+          </div>
+
           <h2>
-            Taste Adventure
-            <br />
-            Starts Here
+            FOODLAB
           </h2>
 
-          <div className="social-icons">
-            <a
-  href="https://www.instagram.com/itz.ravi_17?igsh=M3F3MWNkcmUwZDMw/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaInstagram />
-</a>
-
-            <a href="#">
-              <FaXTwitter />
-            </a>
-
-            <a href="#">
-              <FaFacebookF />
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-contact">
-          <h3>Email</h3>
-          <p>foodlab@gmail.com</p>
-
-          <h3>Phone</h3>
-          <p>+91 9980559321</p>
-        </div>
-
-        <div className="footer-newsletter">
           <p>
-            Subscribe to our newsletter
-            and receive updates on food
-            science, reviews and stories.
+            A food science journal about flavour,
+            ingredients, cooking culture,
+            and everything in between.
           </p>
 
-          <input
-            type="email"
-            placeholder="Email Address"
-          />
+          {/* SOCIALS */}
 
-          <button>
-            Sign Up
-          </button>
+          <div className="footer-socials">
+
+            <a href="#">
+              <RiInstagramLine />
+            </a>
+
+            <a href="#">
+              <RiLinkedinBoxLine />
+            </a>
+
+            <a href="#">
+              <RiPinterestLine />
+            </a>
+
+          </div>
+
         </div>
 
-      </section>
+        {/* LINKS */}
+
+        <div className="footer-links-wrapper">
+
+          {/* SERIES */}
+
+          <div className="footer-column">
+
+            <span>
+              THE SERIES
+            </span>
+
+            <ul>
+
+              <li>Diary Entries</li>
+              <li>Browning Files</li>
+              <li>Study / Lab Notes</li>
+              <li>Kitchen Decoded</li>
+              <li>The Science Behind</li>
+              <li>Lab Work</li>
+              <li>Label Lab</li>
+              <li>Final Verdict</li>
+              <li>Field Notes</li>
+
+            </ul>
+
+          </div>
+
+          {/* MORE */}
+
+          <div className="footer-column">
+
+            <span>
+              MORE
+            </span>
+
+            <ul>
+
+              <li>About</li>
+              <li>Work with me</li>
+              <li>Contact</li>
+              <li>@foodlabjournal</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* FOOTER CENTER LINE */}
+
+      <div className="footer-middle">
+
+        <div className="middle-line"></div>
+
+        <p>
+          Named after the reaction
+          that makes food taste like memory.
+        </p>
+
+        <div className="middle-line"></div>
+
+      </div>
+
+      {/* BOTTOM */}
 
       <div className="footer-bottom">
-        © 2026 FoodLab. All Rights Reserved.
+
+        <p>
+          © 2026 FOODLAB.
+          All rights reserved.
+        </p>
+
+        <button>
+
+          Back to top
+
+          <RiArrowRightUpLine />
+
+        </button>
+
       </div>
 
     </footer>
   );
 }
-
-export default Footer;

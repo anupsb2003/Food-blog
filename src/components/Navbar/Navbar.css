@@ -1,79 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+/* =========================================
+NAVBAR
+========================================= */
+
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
+
+  height: 84px;
+
+  padding: 0 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   z-index: 1000;
 
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================================
+LOGO
+========================================= */
+
+.navbar-logo h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 3rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.05em;
+
+  color: #f5efe7;
+
+  white-space: nowrap;
+
+  line-height: 1;
+}
+
+/* =========================================
+CENTER LINKS
+========================================= */
+
+.navbar-center {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  padding: 30px 70px;
-
-  background: rgba(15, 15, 15, 0.39);
-}
-.navbar.scrolled {
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.navbar-logo {
-  position: relative;
-}
-
-.navbar-logo h2 {
-  color: white;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-family: Georgia, serif;
-}
-
-.journal-text {
-  position: absolute;
-  top: 5px;
-  left: 110px;
-
-  color: #d7c6a4;
-  font-size: 0.8rem;
-  letter-spacing: 4px;
+  justify-content: center;
 }
 
 .navbar-links {
   display: flex;
-  gap: 50px;
+  align-items: center;
+
+  gap: 42px;
+
   list-style: none;
 }
 
 .navbar-links li {
-  color: white;
-  font-size: 1.20rem;
-  cursor: pointer;
   position: relative;
-  transition: 0.3s;
-}
 
-.navbar-links li::after {
-  content: "";
+  font-size: 1rem;
+  font-weight: 500;
 
-  position: absolute;
-  left: 0;
-  bottom: -5px;
+  color: rgba(255,255,255,0.72);
 
-  width: 0;
-  height: 1px;
+  cursor: pointer;
 
-  background: white;
-
-  transition: 0.3s;
-}
-
-.navbar-links li:hover::after {
-  width: 100%;
+  transition: 0.3s ease;
 }
 
 .navbar-links li:hover {
-  color: #e7d2b3;
+  color: #fff;
+}
+
+/* ACTIVE LINK */
+
+.navbar-links li.active {
+  color: #fff;
+}
+
+.navbar-links li.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -14px;
+
+  width: 100%;
+  height: 1.5px;
+
+  background: #f5efe7;
+}
+
+/* =========================================
+RIGHT SIDE
+========================================= */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+/* SEARCH */
+
+.search-btn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255,255,255,0.1);
+}
+
+/* SUBSCRIBE */
+
+.subscribe-btn {
+  height: 46px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  background: #f5efe7;
+
+  color: #111;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 30px rgba(255,255,255,0.08);
+}
+
+.subscribe-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 40px rgba(255,255,255,0.14);
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 28px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 2.2rem;
+  }
+
+  .navbar-links {
+    gap: 26px;
+  }
+
+  .navbar-links li {
+    font-size: 0.92rem;
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 74px;
+
+    padding: 0 18px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .navbar-center {
+    display: none;
+  }
+
+  .search-btn {
+    width: 40px;
+    height: 40px;
+
+    font-size: 1rem;
+  }
+
+  .subscribe-btn {
+    height: 40px;
+
+    padding: 0 18px;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.12em;
+  }
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .navbar-logo h1 {
+    font-size: 1.45rem;
+  }
+
+  .subscribe-btn {
+    padding: 0 14px;
+  }
 }

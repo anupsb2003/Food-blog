@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import SpicesNavigation from "./pages/SpicesNavigation/SpicesNavigation";
 import CoffeNavigation from "./pages/CoffeeNavigation/CoffeNavigation";
+import AllPostsPage from "./components/LatestEntries/AllPostsPage";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/dosa-navigation" element={<DosaNavigation />} />
         <Route path="/coffee-navigation" element={<CoffeNavigation />}/>
         <Route path="/spices-navigation" element={<SpicesNavigation />}/>
+        <Route path="/all-posts" element={<AllPostsPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

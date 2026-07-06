@@ -15,6 +15,7 @@ function DosaNavigation(){
         className="luxury-dosa-video"
         autoPlay
         playsInline
+        loop
       >
         <source
           src={dosaList}

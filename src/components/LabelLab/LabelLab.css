@@ -1,0 +1,723 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  font-family:"Inter",sans-serif;
+  overflow-x:hidden;
+}
+
+/* =========================================
+SECTION
+========================================= */
+
+.label-lab-section{
+  position:relative;
+
+  width:100%;
+
+  padding:120px 70px;
+
+  background:#050505;
+
+  overflow:hidden;
+}
+
+/* =========================================
+GLOW
+========================================= */
+
+.label-glow{
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  z-index:0;
+}
+
+.glow-left{
+  width:500px;
+  height:500px;
+
+  top:100px;
+  left:-180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,120,0,.16),
+      transparent 72%
+    );
+
+  animation:
+    glowMove 10s ease infinite;
+}
+
+.glow-right{
+  width:600px;
+  height:600px;
+
+  bottom:-180px;
+  right:-180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,177,93,.14),
+      transparent 72%
+    );
+
+  animation:
+    glowMoveTwo 12s ease infinite;
+}
+
+/* =========================================
+TOP
+========================================= */
+
+.label-top{
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  margin-bottom:70px;
+}
+
+.label-small{
+  color:#d8b15d;
+
+  letter-spacing:.24em;
+
+  font-size:.82rem;
+
+  font-weight:700;
+}
+
+.label-heading{
+  margin-top:18px;
+
+  font-size:5.2rem;
+
+  line-height:.92;
+
+  color:#f4ede7;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.episodes-btn{
+  height:58px;
+
+  padding:0 28px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(18px);
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.episodes-btn:hover{
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,.1);
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.label-grid{
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:28px;
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.label-card{
+  position:relative;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(24px);
+
+  transform:
+    translateY(80px);
+
+  opacity:0;
+
+  animation:
+    revealCard 1s ease forwards;
+
+  transition:.45s ease;
+}
+
+.label-card:hover{
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.45);
+}
+
+/* =========================================
+IMAGE
+========================================= */
+
+.label-image{
+  position:relative;
+
+  height:280px;
+
+  background-size:cover;
+  background-position:center;
+
+  overflow:hidden;
+}
+
+.label-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.12),
+      rgba(0,0,0,.68)
+    );
+}
+
+/* ICON */
+
+.label-icon{
+  position:absolute;
+
+  top:22px;
+  left:22px;
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  backdrop-filter: blur(18px);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:1.3rem;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.label-content{
+  padding:34px;
+}
+
+.label-content small{
+  color:#d8b15d;
+
+  letter-spacing:.08em;
+
+  font-size:.78rem;
+}
+
+.label-content h3{
+  margin-top:16px;
+
+  font-size:2.3rem;
+
+  line-height:1;
+
+  color:white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.label-content p{
+  margin-top:18px;
+
+  line-height:1.9;
+
+  color:
+    rgba(255,255,255,.72);
+}
+
+/* FOOTER */
+
+.label-footer{
+  margin-top:30px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.label-footer span{
+  color:#d8b15d;
+
+  font-size:.92rem;
+}
+
+.label-footer button{
+  width:fit-content;
+
+  height:52px;
+
+  padding:0 22px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:white;
+
+  color:black;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.label-footer button:hover{
+  transform:
+    translateY(-4px)
+    scale(1.03);
+}
+
+/* =========================================
+POPUP
+========================================= */
+
+.label-popup-overlay{
+  position:fixed;
+  inset:0;
+
+  background:
+    rgba(0,0,0,.78);
+
+  backdrop-filter: blur(18px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:30px;
+
+  z-index:9999;
+
+  animation:
+    fadePopup .35s ease;
+}
+
+.label-popup{
+  position:relative;
+
+  width:100%;
+  max-width:1150px;
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(28px);
+
+  animation:
+    popupReveal .55s
+    cubic-bezier(.16,1,.3,1);
+}
+
+/* IMAGE */
+
+.popup-image-side{
+  min-height:720px;
+
+  background-size:cover;
+  background-position:center;
+
+  position:relative;
+}
+
+.popup-dark{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.2),
+      rgba(0,0,0,.72)
+    );
+}
+
+/* CONTENT */
+
+.popup-content-side{
+  padding:52px;
+}
+
+.popup-content-side small{
+  color:#d8b15d;
+
+  letter-spacing:.14em;
+}
+
+.popup-content-side h2{
+  margin-top:20px;
+
+  font-size:4rem;
+
+  line-height:.95;
+
+  color:white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.popup-content-side p{
+  margin-top:28px;
+
+  line-height:2;
+
+  color:
+    rgba(255,255,255,.74);
+}
+
+.popup-verdict{
+  margin-top:34px;
+
+  color:white;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+}
+
+.popup-verdict span{
+  color:#d8b15d;
+}
+
+/* BUTTON */
+
+.popup-content-side button{
+  margin-top:36px;
+
+  height:56px;
+
+  padding:0 26px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:white;
+
+  color:black;
+
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.popup-content-side button:hover{
+  transform:
+    translateY(-4px);
+}
+
+/* CLOSE */
+
+.label-close{
+  position:absolute;
+
+  top:18px;
+  right:18px;
+
+  width:48px;
+  height:48px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:10;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.label-close:hover{
+  transform:
+    rotate(90deg);
+
+  background:
+    rgba(255,255,255,.14);
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes revealCard{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateY(80px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes popupReveal{
+
+  from{
+    opacity:0;
+
+    transform:
+      scale(.88)
+      translateY(60px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+@keyframes fadePopup{
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes glowMove{
+
+  0%{
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateY(40px)
+      scale(1.08);
+  }
+
+  100%{
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes glowMoveTwo{
+
+  0%{
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateX(40px)
+      scale(1.08);
+  }
+
+  100%{
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+  .label-grid{
+    grid-template-columns:1fr;
+  }
+
+  .label-heading{
+    font-size:4rem;
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .label-lab-section{
+    padding:90px 22px;
+  }
+
+  .label-top{
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:28px;
+  }
+
+  .label-heading{
+    font-size:2.9rem;
+  }
+
+  .label-content{
+    padding:26px;
+  }
+
+  .label-content h3{
+    font-size:2rem;
+  }
+
+  .label-popup{
+    grid-template-columns:1fr;
+
+    max-height:92vh;
+
+    overflow:auto;
+  }
+
+  .popup-image-side{
+    min-height:320px;
+  }
+
+  .popup-content-side{
+    padding:28px;
+  }
+
+  .popup-content-side h2{
+    font-size:2.4rem;
+  }
+}

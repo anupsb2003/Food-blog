@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================
+TICKER SECTION
+========================================= */
+
+.foodTicker {
+  position: relative;
+
+  width: 100%;
+  height: 78px;
+
+  overflow: hidden;
+
+  background: #111;
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+FADE EDGES
+========================================= */
+
+.tickerFade {
+  position: absolute;
+  top: 0;
+
+  width: 120px;
+  height: 100%;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.tickerFade.left {
+  left: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #111,
+      transparent
+    );
+}
+
+.tickerFade.right {
+  right: 0;
+
+  background:
+    linear-gradient(
+      to left,
+      #111,
+      transparent
+    );
+}
+
+/* =========================================
+TRACK
+========================================= */
+
+.tickerTrack {
+  display: flex;
+
+  width: max-content;
+
+  animation:
+    infiniteTicker 28s linear infinite;
+}
+
+/* =========================================
+GROUP
+========================================= */
+
+.tickerGroup {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+/* =========================================
+ITEM
+========================================= */
+
+.tickerItem {
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+
+  padding: 0 46px;
+
+  white-space: nowrap;
+}
+
+/* TEXT */
+
+.tickerItem span {
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.82);
+
+  transition: 0.3s ease;
+}
+
+.tickerItem:hover span {
+  color: #ffffff;
+}
+
+/* DOT */
+
+.tickerDot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #b64d34;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 0 12px rgba(182,77,52,0.6);
+}
+
+/* =========================================
+ANIMATION
+========================================= */
+
+@keyframes infiniteTicker {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+HOVER PAUSE
+========================================= */
+
+.foodTicker:hover .tickerTrack {
+  animation-play-state: paused;
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+  .foodTicker {
+    height: 72px;
+  }
+
+  .tickerItem {
+    gap: 30px;
+
+    padding: 0 34px;
+  }
+
+  .tickerItem span {
+    font-size: 0.78rem;
+
+    letter-spacing: 0.18em;
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .foodTicker {
+    height: 66px;
+  }
+
+  .tickerFade {
+    width: 60px;
+  }
+
+  .tickerItem {
+    gap: 22px;
+
+    padding: 0 24px;
+  }
+
+  .tickerItem span {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.14em;
+  }
+
+  .tickerDot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .tickerItem {
+    padding: 0 18px;
+  }
+
+  .tickerItem span {
+    font-size: 0.64rem;
+  }
+}

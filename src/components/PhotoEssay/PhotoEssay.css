@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  overflow-x:hidden;
+  font-family:"Inter",sans-serif;
+}
+
+/* =========================================
+SECTION
+========================================= */
+
+.photo-essay-section{
+  position:relative;
+
+  width:100%;
+
+  padding:120px 70px;
+
+  background:#050505;
+
+  overflow:hidden;
+}
+
+/* =========================================
+GLOWS
+========================================= */
+
+.essay-glow{
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  z-index:0;
+}
+
+.glow-left{
+  width:600px;
+  height:600px;
+
+  top:-180px;
+  left:-200px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,120,0,.14),
+      transparent 72%
+    );
+
+  animation:
+    glowMove 12s ease infinite;
+}
+
+.glow-right{
+  width:700px;
+  height:700px;
+
+  bottom:-250px;
+  right:-250px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,177,93,.12),
+      transparent 72%
+    );
+
+  animation:
+    glowMoveTwo 14s ease infinite;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.essay-header{
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:70px;
+}
+
+.essay-header span{
+  color:#d8b15d;
+
+  font-size:.82rem;
+
+  letter-spacing:.24em;
+
+  font-weight:700;
+}
+
+.essay-header h2{
+  margin-top:20px;
+
+  max-width:900px;
+
+  font-size:5.5rem;
+
+  line-height:.92;
+
+  color:#f4ede7;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.essay-grid{
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(12,1fr);
+
+  grid-auto-rows:90px;
+
+  gap:24px;
+}
+
+/* =========================================
+CARD BASE
+========================================= */
+
+.essay-card{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background-size:cover;
+  background-position:center;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+
+  transform:
+    translateY(80px)
+    scale(.96);
+
+  opacity:0;
+
+  animation:
+    revealCard 1s ease forwards;
+
+  transition:.5s ease;
+
+  cursor:pointer;
+}
+
+/* UNIQUE LAYOUT */
+
+.card-1{
+  grid-column:span 7;
+  grid-row:span 5;
+}
+
+.card-2{
+  grid-column:span 5;
+  grid-row:span 3;
+}
+
+.card-3{
+  grid-column:span 5;
+  grid-row:span 4;
+}
+
+.card-4{
+  grid-column:span 3;
+  grid-row:span 4;
+}
+
+.card-5{
+  grid-column:span 4;
+  grid-row:span 4;
+}
+
+.card-6{
+  grid-column:span 5;
+  grid-row:span 3;
+}
+
+.card-7{
+  grid-column:span 7;
+  grid-row:span 3;
+}
+
+/* =========================================
+OVERLAY
+========================================= */
+
+.essay-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.1),
+      rgba(0,0,0,.88)
+    );
+
+  z-index:1;
+}
+
+/* GLASS */
+
+.essay-glass{
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      transparent 45%
+    );
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.essay-content{
+  position:relative;
+
+  z-index:3;
+
+  height:100%;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* TOP */
+
+.essay-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.essay-icon{
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  backdrop-filter: blur(18px);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:1.3rem;
+}
+
+.essay-top small{
+  color:
+    rgba(255,255,255,.55);
+
+  letter-spacing:.1em;
+}
+
+/* BOTTOM */
+
+.essay-bottom h3{
+  font-size:2.2rem;
+
+  line-height:1;
+
+  color:white;
+
+  max-width:90%;
+
+  transition:.45s ease;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+/* =========================================
+HOVER TEXT
+========================================= */
+
+.essay-hover{
+  margin-top:24px;
+
+  max-height:0;
+
+  overflow:hidden;
+
+  opacity:0;
+
+  transform:
+    translateY(20px);
+
+  transition:.45s ease;
+}
+
+.essay-hover span{
+  line-height:1.9;
+
+  color:
+    rgba(255,255,255,.75);
+}
+
+/* =========================================
+HOVER EFFECTS
+========================================= */
+
+.essay-card:hover{
+  transform:
+    translateY(-12px)
+    scale(1.02);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.5);
+}
+
+.essay-card:hover .essay-hover{
+  max-height:200px;
+
+  opacity:1;
+
+  transform:
+    translateY(0);
+}
+
+.essay-card:hover .essay-bottom h3{
+  transform:
+    translateY(-6px);
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes revealCard{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateY(80px)
+      scale(.94);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes glowMove{
+
+  0%{
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateY(40px)
+      scale(1.08);
+  }
+
+  100%{
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes glowMoveTwo{
+
+  0%{
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateX(50px)
+      scale(1.08);
+  }
+
+  100%{
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+  .essay-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+
+    grid-auto-rows:320px;
+  }
+
+  .essay-card{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+  }
+
+  .essay-header h2{
+    font-size:4rem;
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .photo-essay-section{
+    padding:90px 22px;
+  }
+
+  .essay-grid{
+    grid-template-columns:1fr;
+
+    grid-auto-rows:300px;
+  }
+
+  .essay-header h2{
+    font-size:2.9rem;
+  }
+
+  .essay-content{
+    padding:22px;
+  }
+
+  .essay-bottom h3{
+    font-size:1.8rem;
+  }
+
+  .essay-hover span{
+    font-size:.92rem;
+    line-height:1.7;
+  }
+}

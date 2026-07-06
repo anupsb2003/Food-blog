@@ -1,0 +1,953 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  overflow-x:hidden;
+  font-family:"Inter",sans-serif;
+}
+
+/* ========================================
+SECTION
+======================================== */
+
+.field-notes{
+  position:relative;
+
+  width:100%;
+
+  padding:120px 70px;
+
+  background:#050505;
+
+  overflow:hidden;
+}
+
+/* ========================================
+GRID BG
+======================================== */
+
+.bg-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.03) 1px,
+      transparent 1px
+    );
+
+  background-size:70px 70px;
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black,
+      transparent 85%
+    );
+}
+
+/* ========================================
+GLOW
+======================================== */
+
+.glow{
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(160px);
+
+  z-index:0;
+}
+
+.glow-left{
+  width:500px;
+  height:500px;
+
+  top:-150px;
+  left:-150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,120,0,.18),
+      transparent 70%
+    );
+}
+
+.glow-right{
+  width:700px;
+  height:700px;
+
+  bottom:-260px;
+  right:-260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,177,93,.14),
+      transparent 72%
+    );
+}
+
+/* ========================================
+HEADER
+======================================== */
+
+.field-header{
+  position:relative;
+
+  z-index:5;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  margin-bottom:80px;
+}
+
+.field-header span{
+  color:#d8b15d;
+
+  letter-spacing:.24em;
+
+  font-size:.82rem;
+
+  font-weight:700;
+}
+
+.field-header h2{
+  margin-top:18px;
+
+  font-size:5rem;
+
+  line-height:.92;
+
+  color:#f5f1ea;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.field-header button{
+  height:58px;
+
+  padding:0 28px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.06);
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  cursor:pointer;
+
+  backdrop-filter: blur(18px);
+
+  transition:.35s ease;
+}
+
+.field-header button:hover{
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,.12);
+}
+
+/* ========================================
+WRAPPER
+======================================== */
+
+.notes-wrapper{
+  position:relative;
+
+  z-index:3;
+
+  display:grid;
+
+  grid-template-columns:
+    1.1fr .9fr;
+
+  gap:28px;
+}
+
+/* ========================================
+LEFT PANEL
+======================================== */
+
+.vertical-panel{
+  position:relative;
+
+  min-height:900px;
+
+  overflow:hidden;
+
+  border-radius:40px;
+
+  background-size:cover;
+  background-position:center;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  animation:
+    slideLeft 1s ease;
+}
+
+.vertical-panel:hover{
+  transform:
+    translateY(-8px)
+    scale(1.01);
+}
+
+/* ========================================
+LAYERS
+======================================== */
+
+.dark-layer{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.88)
+    );
+}
+
+.glass-layer{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.12),
+      transparent 35%
+    );
+}
+
+/* ========================================
+ID
+======================================== */
+
+.panel-id{
+  position:absolute;
+
+  top:30px;
+  right:34px;
+
+  font-size:8rem;
+
+  font-weight:800;
+
+  color:
+    rgba(255,255,255,.08);
+
+  z-index:3;
+}
+
+/* ========================================
+CONTENT
+======================================== */
+
+.panel-content{
+  position:relative;
+
+  z-index:4;
+
+  height:100%;
+
+  padding:40px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.panel-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:28px;
+}
+
+.panel-icon{
+  width:68px;
+  height:68px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  backdrop-filter: blur(20px);
+
+  color:white;
+
+  font-size:1.5rem;
+
+  animation:
+    floatIcon 5s ease infinite;
+}
+
+.panel-top small{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  color:#d8b15d;
+}
+
+.panel-content h3{
+  font-size:4.4rem;
+
+  line-height:.92;
+
+  color:white;
+
+  max-width:650px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.panel-content p{
+  margin-top:24px;
+
+  max-width:620px;
+
+  line-height:1.9;
+
+  color:
+    rgba(255,255,255,.72);
+}
+
+/* ========================================
+BUTTON
+======================================== */
+
+.panel-content button,
+.floating-content button,
+.coffee-content button,
+.popup-body button{
+  margin-top:30px;
+
+  width:max-content;
+
+  height:56px;
+
+  padding:0 24px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:white;
+
+  color:black;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.panel-content button:hover,
+.floating-content button:hover,
+.coffee-content button:hover,
+.popup-body button:hover{
+  transform:
+    translateY(-4px);
+}
+
+/* ========================================
+STACK
+======================================== */
+
+.stack-layout{
+  display:flex;
+  flex-direction:column;
+
+  gap:28px;
+}
+
+/* ========================================
+FLOATING CARD
+======================================== */
+
+.floating-card{
+  position:relative;
+
+  height:360px;
+
+  overflow:hidden;
+
+  border-radius:36px;
+
+  background-size:cover;
+  background-position:center;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  transform:
+    rotate(-2deg);
+
+  animation:
+    slideRight 1s ease;
+}
+
+.floating-card:hover{
+  transform:
+    rotate(0deg)
+    translateY(-8px);
+}
+
+/* ========================================
+BOTTOM ROW
+======================================== */
+
+.bottom-row{
+  display:grid;
+
+  grid-template-columns:
+    .8fr 1fr;
+
+  gap:28px;
+}
+
+/* ========================================
+GLASS QUOTE
+======================================== */
+
+.glass-quote{
+  position:relative;
+
+  min-height:500px;
+
+  border-radius:36px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(26px);
+
+  padding:34px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.quote-ring{
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  top:20px;
+  right:20px;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  animation:
+    rotateRing 16s linear infinite;
+}
+
+.glass-quote span{
+  color:#d8b15d;
+
+  font-size:.8rem;
+
+  letter-spacing:.18em;
+}
+
+.glass-quote h5{
+  margin-top:18px;
+
+  font-size:3rem;
+
+  line-height:.92;
+
+  color:white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.glass-quote p{
+  margin-top:22px;
+
+  line-height:1.9;
+
+  color:
+    rgba(255,255,255,.68);
+}
+
+/* ========================================
+COFFEE CARD
+======================================== */
+
+.coffee-card{
+  position:relative;
+
+  min-height:500px;
+
+  overflow:hidden;
+
+  border-radius:36px;
+
+  background-size:cover;
+  background-position:center;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  transform:
+    rotate(2deg);
+
+  animation:
+    slideUp 1s ease;
+}
+
+.coffee-card:hover{
+  transform:
+    rotate(0deg)
+    translateY(-8px);
+}
+
+/* ========================================
+SMALL CONTENT
+======================================== */
+
+.floating-content,
+.coffee-content{
+  position:relative;
+
+  z-index:4;
+
+  height:100%;
+
+  padding:30px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.mini-circle{
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  backdrop-filter: blur(20px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+
+  font-size:1.3rem;
+
+  margin-bottom:22px;
+}
+
+.floating-content span,
+.coffee-content span{
+  color:#d8b15d;
+
+  font-size:.9rem;
+}
+
+.floating-content h4,
+.coffee-content h4{
+  margin-top:18px;
+
+  font-size:2.4rem;
+
+  line-height:1;
+
+  color:white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+/* ========================================
+POPUP
+======================================== */
+
+.popup-overlay{
+  position:fixed;
+  inset:0;
+
+  background:
+    rgba(0,0,0,.85);
+
+  backdrop-filter: blur(18px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:30px;
+
+  z-index:9999;
+}
+
+.popup-modal{
+  width:100%;
+  max-width:1200px;
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(28px);
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  animation:
+    popupShow .45s
+    cubic-bezier(.16,1,.3,1);
+}
+
+.popup-image{
+  min-height:700px;
+
+  background-size:cover;
+  background-position:center;
+
+  position:relative;
+}
+
+.popup-dark{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.82)
+    );
+}
+
+.popup-body{
+  padding:60px;
+}
+
+.popup-body span{
+  color:#d8b15d;
+
+  letter-spacing:.14em;
+}
+
+.popup-body h2{
+  margin-top:20px;
+
+  font-size:4rem;
+
+  line-height:.92;
+
+  color:white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+.popup-body p{
+  margin-top:28px;
+
+  line-height:2;
+
+  color:
+    rgba(255,255,255,.72);
+}
+
+/* ========================================
+CLOSE
+======================================== */
+
+.close-btn{
+  position:absolute;
+
+  top:18px;
+  right:18px;
+
+  width:54px;
+  height:54px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:1.2rem;
+
+  z-index:10;
+
+  cursor:pointer;
+}
+
+/* ========================================
+ANIMATIONS
+======================================== */
+
+@keyframes slideLeft{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateX(-80px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+@keyframes slideRight{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateX(80px)
+      rotate(-4deg);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateX(0)
+      rotate(-2deg);
+  }
+}
+
+@keyframes slideUp{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateY(80px)
+      rotate(4deg);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateY(0)
+      rotate(2deg);
+  }
+}
+
+@keyframes rotateRing{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes floatIcon{
+
+  0%{
+    transform:
+      translateY(0px);
+  }
+
+  50%{
+    transform:
+      translateY(-10px);
+  }
+
+  100%{
+    transform:
+      translateY(0px);
+  }
+}
+
+@keyframes popupShow{
+
+  from{
+    opacity:0;
+
+    transform:
+      scale(.92)
+      translateY(50px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+/* ========================================
+TABLET
+======================================== */
+
+@media(max-width:1100px){
+
+  .notes-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .bottom-row{
+    grid-template-columns:1fr;
+  }
+
+  .field-header h2{
+    font-size:4rem;
+  }
+
+  .popup-modal{
+    grid-template-columns:1fr;
+  }
+
+  .popup-image{
+    min-height:340px;
+  }
+}
+
+/* ========================================
+MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .field-notes{
+    padding:90px 22px;
+  }
+
+  .field-header{
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:30px;
+  }
+
+  .field-header h2{
+    font-size:2.8rem;
+  }
+
+  .vertical-panel{
+    min-height:650px;
+  }
+
+  .panel-content h3{
+    font-size:2.8rem;
+  }
+
+  .floating-content h4,
+  .coffee-content h4{
+    font-size:2rem;
+  }
+
+  .glass-quote h5{
+    font-size:2.4rem;
+  }
+
+  .popup-body{
+    padding:28px;
+  }
+
+  .popup-body h2{
+    font-size:2.4rem;
+  }
+}
