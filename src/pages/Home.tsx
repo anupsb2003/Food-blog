@@ -1,9 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import Contact from "../components/Contact/Contact";
 import DosaScrollAnimation from "../components/DosaScrollAnimation/DosaScrollAnimation";
-import CoffeeScrollAnimation from "../components/CoffeeScrollAnimation/CoffeeScrollAnimation";
-import SpicesScrollAnimation from "../components/SpicesScrollAnimation/SpicesScrollAnimation";
 import FoodTicker from "../components/FoodTicker/FoodTicker";
 import ManifestoSection from "../components/ManifestoSection/ManifestoSection";
 import ContentPillars from "../components/ContentPillars/ContentPillars";
@@ -27,9 +24,6 @@ function Home() {
       <AboutSection />
       <FieldNotes />
       <Newsletter />
-      {/* <SpicesScrollAnimation />
-      <CoffeeScrollAnimation />
-      <Contact /> */}
       <Footer />
     </>
   );
