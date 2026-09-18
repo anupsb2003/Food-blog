@@ -1,6 +1,6 @@
-<img 
-  src="https://github.com/anupsb2003/Food-blog/blob/main/src/assets/food-blog.png" 
-  alt="Food Blog Website Preview" 
+<img
+  src="https://raw.githubusercontent.com/anupsb2003/Food-blog/main/src/assets/food-blog.png"
+  alt="Food Blog Website Preview"
   width="100%"
 />
 # 🍽️ Food Blog 3D
