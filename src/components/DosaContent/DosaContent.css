@@ -1,0 +1,199 @@
+.dosa-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dosa-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.75)
+    );
+
+  z-index: 1;
+}
+
+.dosa-content {
+  position: absolute;
+
+  top: 50%;
+  left: 8%;
+
+  transform: translateY(-50%);
+
+  max-width: 750px;
+
+  z-index: 10;
+}
+
+/* ---------- TAG ---------- */
+
+.dosa-tag {
+  display: inline-block;
+
+  color: #f7c77f;
+
+  font-size: 14px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transform: translateY(80px);
+}
+
+/* ---------- TITLE ---------- */
+
+.dosa-title {
+  margin-top: 20px;
+
+  font-size: clamp(4rem, 8vw, 7rem);
+
+  line-height: 0.9;
+
+  font-family: Georgia, serif;
+
+  color: white;
+}
+
+.dosa-title-line1,
+.dosa-title-line2 {
+  display: inline-block;
+
+  color: white;
+
+  opacity: 0;
+
+  transform: translateY(100px);
+}
+
+/* ---------- DESCRIPTION ---------- */
+
+.dosa-description {
+  margin-top: 30px;
+
+  max-width: 550px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 1.1rem;
+
+  line-height: 1.9;
+
+  opacity: 0;
+
+  transform: translateY(60px);
+}
+
+/* ---------- FEATURES ---------- */
+
+.dosa-features {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.feature {
+  color: white;
+
+  font-size: 1.1rem;
+
+  font-weight: 500;
+
+  opacity: 0;
+
+  transform: translateX(-40px);
+}
+
+/* ---------- BUTTON ---------- */
+
+.dosa-btn {
+  margin-top: 40px;
+
+  padding: 18px 36px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: white;
+
+  color: #111;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transform: scale(0.7);
+
+  transition: all 0.4s ease;
+}
+
+.dosa-btn:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 992px) {
+  .dosa-content {
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .dosa-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dosa-content {
+    left: 25px;
+    right: 25px;
+  }
+
+  .dosa-title {
+    font-size: 3rem;
+  }
+
+  .dosa-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .feature {
+    font-size: 1rem;
+  }
+
+  .dosa-btn {
+    width: 100%;
+  }
+}

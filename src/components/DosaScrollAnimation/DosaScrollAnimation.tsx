@@ -237,11 +237,14 @@ export default function DosaScrollAnimation() {
               className="dosa-primary"
               onClick={handleOnClick}
             >
-              Start Reading
+              Start Reading Dosa 
             </button>
 
-            <button className="dosa-secondary">
-              Label Lab
+            <button className="dosa-secondary" onClick={() => navigate("/spices-navigation")}>
+              Explore Spices
+            </button>
+            <button className="dosa-secondary" onClick={() => navigate("/coffee-navigation")}>
+              Explore Coffee
             </button>
 
           </div>

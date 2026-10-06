@@ -15,7 +15,6 @@ function CoffeNavigation() {
   return (
     <div className="luxury-coffee-wrapper">
 
-      {/* VIDEO BACKGROUND */}
       <video
         className="luxury-coffee-video"
         autoPlay
@@ -27,10 +26,8 @@ function CoffeNavigation() {
         />
       </video>
 
-      {/* OVERLAY */}
       <div className="luxury-coffee-overlay"></div>
 
-      {/* SCROLLABLE CONTENT */}
       <div className="luxury-coffee-scroll-container">
         <CoffeeNavbar />
         <CoffeeHero />
