@@ -1,7 +1,7 @@
 import "./DosaList.css";
 import { FaPlay } from "react-icons/fa";
 import Dosa from "../../../assets/Dosa.png";
-export default function App() {
+export default function DosaList() {
   return (
    <div className="dosa-hero-section">
   <div className="dosa-bg-overlay"></div>
