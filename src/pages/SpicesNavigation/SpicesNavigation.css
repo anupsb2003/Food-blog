@@ -37,7 +37,7 @@ body,
 
   object-fit: cover;
 
-  z-index: -3;
+  z-index: 0;
 }
 
 /* OVERLAY */
